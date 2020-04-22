@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8298EAB6-0586-4BDA-9483-83624B66B13A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JPANsRareItemSwap</RootNamespace>
+    <AssemblyName>JPANsRareItemSwap</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Common\Booth\PartBooth.cs" />
+    <Compile Include="Common\Booth\PartConverter.cs" />
+    <Compile Include="Common\Components\PathTree.cs" />
+    <Compile Include="Common\Globals\PartsGlobalItem.cs" />
+    <Compile Include="Common\Globals\PartsGlobalNPC.cs" />
+    <Compile Include="Common\PartRecipe.cs" />
+    <Compile Include="Common\Globals\GlobalBobberProjectile.cs" />
+    <Compile Include="Common\UI\Elements\DestroyButton.cs" />
+    <Compile Include="Common\UI\Elements\DraggablePanel.cs" />
+    <Compile Include="Common\UI\Elements\InvisibleScrollbar.cs" />
+    <Compile Include="Common\UI\Elements\PathTreePanel.cs" />
+    <Compile Include="Common\UI\Elements\SearchUITextBox.cs" />
+    <Compile Include="Common\UI\Elements\PartItemSlot.cs" />
+    <Compile Include="Common\UI\Elements\UIGridList.cs" />
+    <Compile Include="Common\UI\Elements\UIItemSlot.cs" />
+    <Compile Include="Common\UI\PartExchangeUI.cs" />
+    <Compile Include="Common\UI\RecipePanel.cs" />
+    <Compile Include="Configs\Config.cs" />
+    <Compile Include="JPANsRareItemSwap.cs" />
+    <Compile Include="PartsPlayer.cs" />
+    <Compile Include="Parts\BossParts.cs" />
+    <Compile Include="Parts\ItemPart.cs" />
+    <Compile Include="Parts\Vanilla\Biomes\BiomeParts.cs" />
+    <Compile Include="Parts\Vanilla\Bosses\BossParts.cs" />
+    <Compile Include="Parts\Vanilla\DyePart.cs" />
+    <Compile Include="Parts\Vanilla\Events\EventParts.cs" />
+    <Compile Include="Parts\Vanilla\FishingPart.cs" />
+    <Compile Include="Parts\Vanilla\DeveloperPart.cs" />
+    <Compile Include="Parts\Vanilla\MusicBoxPart.cs" />
+    <Compile Include="Parts\Vanilla\PresentPart.cs" />
+    <Compile Include="Parts\Vanilla\GoodieBagPart.cs" />
+    <Compile Include="Parts\Vanilla\ShopPart.cs" />
+    <Compile Include="Parts\Vanilla\PaintingPart.cs" />
+    <Compile Include="Parts\Vanilla\Stages\StageParts.cs" />
+    <Compile Include="Parts\Vanilla\Weather\WeatherParts.cs" />
+    <Compile Include="Recipes\ModPartRepository.cs" />
+    <Compile Include="Recipes\Vanilla\VanillaAccessoryRecipes.cs" />
+    <Compile Include="Recipes\Vanilla\VanillaBossesRecipes.cs" />
+    <Compile Include="Recipes\Vanilla\VanillaFishingAndSeasonalsRecipes.cs" />
+    <Compile Include="Recipes\Vanilla\VanillaFurnitureRecipes.cs" />
+    <Compile Include="Recipes\Vanilla\VanillaMaterialRecipes.cs" />
+    <Compile Include="Recipes\Vanilla\VanillaModPartRepository.cs" />
+    <Compile Include="Recipes\Vanilla\VanillaShopsRecipes.cs" />
+    <Compile Include="Recipes\Vanilla\VanillaVanityAndPetsRecipes.cs" />
+    <Compile Include="Recipes\Vanilla\VanillaWeaponsRecipes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework.Game\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework.Graphics\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework.Xact\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Xact.dll</HintPath>
+    </Reference>
+    <Reference Include="ReLogic">
+      <HintPath>..\..\references\ReLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Terraria">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\terraria\Terraria.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build.txt" />
+    <Content Include="Common\Booth\PartBooth.png" />
+    <Content Include="Common\Booth\PartBoothTile.png" />
+    <Content Include="Common\Booth\PartConverter.png" />
+    <Content Include="description.txt" />
+    <Content Include="Parts\Vanilla\Biomes\CorruptionSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\CorruptionSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\CorruptionUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\CorruptionUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\CrimsonSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\CrimsonSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\CrimsonUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\CrimsonUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\DesertSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\DesertSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\DesertUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\DesertUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\DungeonSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\DungeonSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\DungeonUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\DungeonUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\ForestSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\ForestSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\ForestUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\ForestUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\GlowingMushroomSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\GlowingMushroomSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\GlowingMushroomUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\GlowingMushroomUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\GraniteSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\GraniteSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\GraniteUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\GraniteUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\HallowedSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\HallowedSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\HallowedUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\HallowedUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\HellSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\HellSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\HellUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\HellUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\IceUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\IceUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\JungleSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\JungleSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\JungleUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\JungleUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\MarbleSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\MarbleSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\MarbleUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\MarbleUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\MeteoriteSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\MeteoriteSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\MeteoriteUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\MeteoriteUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\OceanSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\OceanSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\OceanUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\OceanUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\SkySurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\SkySurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\SkyUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\SkyUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\IceSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\IceSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\SpiderCaveSurfacePart.png" />
+    <Content Include="Parts\Vanilla\Biomes\SpiderCaveSurfacePart_World.png" />
+    <Content Include="Parts\Vanilla\Biomes\SpiderCaveUndergroundPart.png" />
+    <Content Include="Parts\Vanilla\Biomes\SpiderCaveUndergroundPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\BetsyPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\BetsyPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\BrainOfCthulhuPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\BrainOfCthulhuPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\CorruptionMimicPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\CorruptionMimicPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\CrimsonMimicPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\CrimsonMimicPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\DarkMagePart.png" />
+    <Content Include="Parts\Vanilla\Bosses\DarkMagePart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\DukeFishronPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\DukeFishronPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\DungeonGuardianPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\DungeonGuardianPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\EaterOfWorldsPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\EaterOfWorldsPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\EverscreamPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\EverscreamPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\EyeOfCthulhuPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\EyeOfCthulhuPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\FlyingDutchmanPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\FlyingDutchmanPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\GoblinSummonerPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\GoblinSummonerPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\GolemPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\GolemPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\HallowedMimicPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\HallowedMimicPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\IceQueenPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\IceQueenPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\JungleMimicPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\JungleMimicPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\KingSlimePart.png" />
+    <Content Include="Parts\Vanilla\Bosses\KingSlimePart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\LunaticCultistPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\LunaticCultistPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\MartianSaucerPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\MartianSaucerPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\MimicPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\MimicPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\MoonLordPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\MoonLordPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\MourningWoodPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\MourningWoodPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\OgrePart.png" />
+    <Content Include="Parts\Vanilla\Bosses\OgrePart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\PlanteraPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\PlanteraPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\PumpkingPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\PumpkingPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\QueenBeePart.png" />
+    <Content Include="Parts\Vanilla\Bosses\QueenBeePart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\RareEnemyPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\RareEnemyPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\SantaNK1Part.png" />
+    <Content Include="Parts\Vanilla\Bosses\SantaNK1Part_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\SkeletronPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\SkeletronPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\SkeletronPrimePart.png" />
+    <Content Include="Parts\Vanilla\Bosses\SkeletronPrimePart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\TheDestroyerPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\TheDestroyerPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\TheTwinsPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\TheTwinsPart_World.png" />
+    <Content Include="Parts\Vanilla\Bosses\WallOfFleshPart.png" />
+    <Content Include="Parts\Vanilla\Bosses\WallOfFleshPart_World.png" />
+    <Content Include="Parts\Vanilla\DefenderShopPart.png" />
+    <Content Include="Parts\Vanilla\DefenderShopPart_World.png" />
+    <Content Include="Parts\Vanilla\DeveloperPart.png" />
+    <Content Include="Parts\Vanilla\DeveloperPart_World.png" />
+    <Content Include="Parts\Vanilla\DyePart.png" />
+    <Content Include="Parts\Vanilla\DyePart_World.png" />
+    <Content Include="Parts\Vanilla\Events\BloodMoonPart.png" />
+    <Content Include="Parts\Vanilla\Events\BloodMoonPart_World.png" />
+    <Content Include="Parts\Vanilla\Events\FrostLegionPart.png" />
+    <Content Include="Parts\Vanilla\Events\FrostLegionPart_World.png" />
+    <Content Include="Parts\Vanilla\Events\FrostMoonPart.png" />
+    <Content Include="Parts\Vanilla\Events\FrostMoonPart_World.png" />
+    <Content Include="Parts\Vanilla\Events\GoblinArmyPart.png" />
+    <Content Include="Parts\Vanilla\Events\GoblinArmyPart_World.png" />
+    <Content Include="Parts\Vanilla\Events\MartianInvasionPart.png" />
+    <Content Include="Parts\Vanilla\Events\MartianInvasionPart_World.png" />
+    <Content Include="Parts\Vanilla\Events\PirateInvasionPart.png" />
+    <Content Include="Parts\Vanilla\Events\PirateInvasionPart_World.png" />
+    <Content Include="Parts\Vanilla\Events\PumpkinMoonPart.png" />
+    <Content Include="Parts\Vanilla\Events\PumpkinMoonPart_World.png" />
+    <Content Include="Parts\Vanilla\Events\SlimeRainPart.png" />
+    <Content Include="Parts\Vanilla\Events\SlimeRainPart_World.png" />
+    <Content Include="Parts\Vanilla\Events\SolarEclipsePart.png" />
+    <Content Include="Parts\Vanilla\Events\SolarEclipsePart_World.png" />
+    <Content Include="Parts\Vanilla\GoodieBagPart.png" />
+    <Content Include="Parts\Vanilla\GoodieBagPart_World.png" />
+    <Content Include="Parts\Vanilla\MajorShopPart.png" />
+    <Content Include="Parts\Vanilla\MajorShopPart_World.png" />
+    <Content Include="Parts\Vanilla\MinorShopPart.png" />
+    <Content Include="Parts\Vanilla\MinorShopPart_World.png" />
+    <Content Include="Parts\Vanilla\MusicBoxPart.png" />
+    <Content Include="Parts\Vanilla\MusicBoxPart_World.png" />
+    <Content Include="Parts\Vanilla\PaintingPart.png" />
+    <Content Include="Parts\Vanilla\PaintingPart_World.png" />
+    <Content Include="Parts\Vanilla\PresentPart.png" />
+    <Content Include="Parts\Vanilla\PresentPart_World.png" />
+    <Content Include="Parts\Vanilla\FishingPart_World.png" />
+    <Content Include="Parts\Vanilla\FishingPart.png" />
+    <Content Include="Parts\Vanilla\ShopPart.png" />
+    <Content Include="Parts\Vanilla\ShopPart_World.png" />
+    <Content Include="Parts\Vanilla\Stages\HardmodePart.png" />
+    <Content Include="Parts\Vanilla\Stages\HardmodePart_World.png" />
+    <Content Include="Parts\Vanilla\Stages\PostMoonLordPart.png" />
+    <Content Include="Parts\Vanilla\Stages\PostMoonLordPart_World.png" />
+    <Content Include="Parts\Vanilla\Stages\PostPlanteraPart.png" />
+    <Content Include="Parts\Vanilla\Stages\PostPlanteraPart_World.png" />
+    <Content Include="Parts\Vanilla\Weather\RainPart.png" />
+    <Content Include="Parts\Vanilla\Weather\RainPart_World.png" />
+    <Content Include="Parts\Vanilla\Weather\SandstormPart.png" />
+    <Content Include="Parts\Vanilla\Weather\SandstormPart_World.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Steam\steamapps\common\terraria\tModLoaderServer.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

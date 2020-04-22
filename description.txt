@@ -1,0 +1,7 @@
+This mod allows the player to trade between Parts and Items by right-clicking a Part Booth furniture.
+
+Parts are small coin-like tokens that can be obtained by either destroying one or more items into Parts or from random Drops from monsters. Don't worry about inventory space, as parts will be auto picked-up into a special player inventory.
+You can still get the item Part by clicking on the Part Bank section of the Part Booth menu.
+Almost all items that cannot be crafted can be obtained by spending Parts, including Boss (and enemy) drops, materials like blocks woods and plants and even seasonal items (halloween and Christmas)
+
+Future plans include Thorium and Calamity mod support.

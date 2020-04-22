@@ -1,0 +1,5 @@
+author = JPAN
+version = 0.1
+displayName = Rare Item Swap
+hideCode = false
+hideResources = false
