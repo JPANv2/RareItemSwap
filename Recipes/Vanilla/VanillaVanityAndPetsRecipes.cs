@@ -487,6 +487,18 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PresentPart>(), 5, ItemID.GiantBow, 1);
+            workingCategories = makeVanityCategories(armorHeadKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, christmasKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkinMoonPart>(), 10, ItemID.JackOLanternMask, 1);
+            workingCategories = makeVanityCategories(armorHeadKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
             foreach (PartRecipe pr in recipes)
             {
                 PartRecipes.addRecipe(pr);
@@ -541,6 +553,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 100, ItemID.LizardEgg, 1);
             working.addPart(ModContent.ItemType<PostPlanteraPart>(), 50);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makePetsCategories(normalPetsKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));

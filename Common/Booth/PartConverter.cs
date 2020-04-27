@@ -14,7 +14,7 @@ namespace ARareItemSwapJPANs.Common.Booth
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Part Converter");
-            Tooltip.SetDefault("Equipping this will turn all items you pick up that can be converted into parts into their equivalent Parts.\nIf more than one recipe is available, it will select the one which require the least amount of the picked item, and randomly beteen the remainder after that.");
+            Tooltip.SetDefault("Use to open the Part Exchange screen.\nEquipping this will turn all items you pick up that can be converted into parts into their equivalent Parts.\nIf more than one recipe is available, it will select the one which require the least amount of the picked item, and randomly beteen the remainder after that.");
         }
 
         public override void SetDefaults()
@@ -24,6 +24,15 @@ namespace ARareItemSwapJPANs.Common.Booth
             item.value = Item.sellPrice(0, 1, 0, 0);
             item.rare = 3;
             item.accessory = true;
+            base.item.useStyle = 4;
+            base.item.useTime = 5;
+            base.item.useAnimation = 5;
+        }
+
+        public override bool UseItem(Player player)
+        {
+            ((ARareItemSwapJPANs)this.mod).ActivatePurchaseUI(player.whoAmI);
+            return base.UseItem(player);
         }
 
         public override void AddRecipes()

@@ -10,6 +10,7 @@ using ARareItemSwapJPANs.Parts.Vanilla.Bosses;
 using ARareItemSwapJPANs.Parts.Vanilla.Events;
 using ARareItemSwapJPANs.Parts.Vanilla.Stages;
 using ARareItemSwapJPANs.Parts.Vanilla.Weather;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -358,6 +359,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostPlanteraPart>(), 1, ItemID.LunarTabletFragment, 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
@@ -879,6 +881,13 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ForestSurfacePart>(), 1, ItemID.Pumpkin, 50);
+            workingCategories = makeMaterialCategories(plantsMaterialKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ForestSurfacePart>(), 1, ItemID.Acorn, 10);
             workingCategories = makeMaterialCategories(woodMaterialKeyword);
             workingCategories.AddRange(makeMaterialCategories(plantsMaterialKeyword));
@@ -960,6 +969,12 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             workingCategories.AddRange(makeMaterialCategories(plantsMaterialKeyword));
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, desertBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ForestSurfacePart>(), 5, ItemID.HerbBag, 1);
+            workingCategories = makeMaterialCategories(plantsMaterialKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ForestSurfacePart>(), 1, ItemID.Daybloom, 25);
@@ -1462,7 +1477,12 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
-            
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 1, ItemID.Hive, 25);
+            workingCategories = makeMaterialCategories(blocksMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DungeonUndergroundPart>(), 1, ItemID.Book, 15);
             workingCategories = makeMaterialCategories(blocksMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, dungeonBiomeKeyword));
@@ -1490,6 +1510,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 1, ItemID.LihzahrdBrick, 25);
             working.addPart(ModContent.ItemType<PostPlanteraPart>(), 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeMaterialCategories(blocksMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);

@@ -299,7 +299,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<HallowedUndergroundPart>(), 80, ItemID.RodofDiscord, 1);
             working.addPart(ModContent.ItemType<HardmodePart>(), 20);
             workingCategories = new List<string>() { utilityKeyword };
-            working.irreversible = true;
+           // working.irreversible = true;
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, hallowedBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -322,42 +322,42 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CorruptionSurfacePart>(), 1, ModContent.ItemType<CrimsonSurfacePart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CrimsonSurfacePart>(), 1, ModContent.ItemType<CorruptionSurfacePart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" };  working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CorruptionUndergroundPart>(), 1, ModContent.ItemType<CrimsonUndergroundPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CrimsonUndergroundPart>(), 1, ModContent.ItemType<CorruptionUndergroundPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CorruptionMimicPart>(), 1, ModContent.ItemType<CrimsonMimicPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CrimsonMimicPart>(), 1, ModContent.ItemType<CorruptionMimicPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CorruptionUndergroundPart>(),1,ModContent.ItemType<CorruptionSurfacePart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));            
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CrimsonUndergroundPart>(), 1, ModContent.ItemType<CrimsonSurfacePart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DesertUndergroundPart>(), 1, ModContent.ItemType<DesertSurfacePart>(), 1);
@@ -365,57 +365,62 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, desertBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DungeonSurfacePart>(), 1, ModContent.ItemType<DungeonUndergroundPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, dungeonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ForestUndergroundPart>(), 1, ModContent.ItemType<ForestSurfacePart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GlowingMushroomSurfacePart>(), 1, ModContent.ItemType<GlowingMushroomUndergroundPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, glowshroomBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GraniteSurfacePart>(), 1, ModContent.ItemType<GraniteUndergroundPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, graniteBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<HallowedUndergroundPart>(), 1, ModContent.ItemType<HallowedSurfacePart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, hallowedBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<HellSurfacePart>(), 1, ModContent.ItemType<HellUndergroundPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, hellBiomeKeyword));
             working.available = () => Main.player[Main.myPlayer].GetModPlayer<PartsPlayer>().parts.ContainsKey(ARareItemSwapJPANs.ItemIDToTag(ModContent.ItemType<HellSurfacePart>())); 
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<IceUndergroundPart>(), 1, ModContent.ItemType<IceSurfacePart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, iceBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 1, ModContent.ItemType<JungleSurfacePart>(), 1);
             workingCategories = new List<string>() { "Parts" };
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MarbleSurfacePart>(), 1, ModContent.ItemType<MarbleUndergroundPart>(), 1);
             workingCategories = new List<string>() { "Parts" };
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, marbleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MeteoriteUndergroundPart>(), 1, ModContent.ItemType<MeteoriteSurfacePart>(), 1);
             workingCategories = new List<string>() { "Parts" };
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, meteoriteBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OceanUndergroundPart>(), 1, ModContent.ItemType<OceanSurfacePart>(), 1);
             workingCategories = new List<string>() { "Parts" };
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, oceanBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkyUndergroundPart>(), 1, ModContent.ItemType<SkySurfacePart>(), 1);
             workingCategories = new List<string>() { "Parts" };
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, skyBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working.available = () => Main.player[Main.myPlayer].GetModPlayer<PartsPlayer>().parts.ContainsKey(ARareItemSwapJPANs.ItemIDToTag(ModContent.ItemType<SkyUndergroundPart>()));
@@ -423,6 +428,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SpiderCaveSurfacePart>(), 1, ModContent.ItemType<SpiderCaveUndergroundPart>(), 1);
             workingCategories = new List<string>() { "Parts" };
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, spiderCaveBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -430,52 +436,82 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CorruptionMimicPart>(), 1, ModContent.ItemType<RareEnemyPart>(), 1);
             workingCategories = new List<string>() { "Parts" };
             working.irreversible = true;
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<CrimsonMimicPart>(), 1, ModContent.ItemType<RareEnemyPart>(), 1);
             workingCategories = new List<string>() { "Parts" };
             working.irreversible = true;
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<HallowedMimicPart>(), 1, ModContent.ItemType<RareEnemyPart>(), 1);
             workingCategories = new List<string>() { "Parts" };
             working.irreversible = true;
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, hallowedBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleMimicPart>(), 1, ModContent.ItemType<RareEnemyPart>(), 1);
             workingCategories = new List<string>() { "Parts" };
             working.irreversible = true;
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MimicPart>(), 1, ModContent.ItemType<RareEnemyPart>(), 1);
             workingCategories = new List<string>() { "Parts" };
             working.irreversible = true;
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, iceBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
-            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MinorShopPart>(), 100, ModContent.ItemType<ShopPart>(), 1);
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostMoonLordPart>(), 1, ModContent.ItemType<PostPlanteraPart>(), 1);
             workingCategories = new List<string>() { "Parts" };
+            working.available = () => NPC.downedMoonlord;
+            working.irreversible = true;
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostMoonLordPart>(), 1, ModContent.ItemType<HardmodePart>(), 1);
+            workingCategories = new List<string>() { "Parts" };
+            working.available = () => NPC.downedMoonlord;
+            working.irreversible = true;
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostPlanteraPart>(), 1, ModContent.ItemType<HardmodePart>(), 1);
+            workingCategories = new List<string>() { "Parts" };
+            working.available = () => NPC.downedPlantBoss;
+            working.irreversible = true;
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MinorShopPart>(), 100, ModContent.ItemType<ShopPart>(), 1);
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MinorShopPart>(), 10000, ModContent.ItemType<MajorShopPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ShopPart>(), 100, ModContent.ItemType<MajorShopPart>(), 1);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ShopPart>(), 1, ModContent.ItemType<MinorShopPart>(), 100);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MajorShopPart>(), 1, ModContent.ItemType<ShopPart>(), 100);
-            workingCategories = new List<string>() { "Parts" };
+            workingCategories = new List<string>() { "Parts" }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MajorShopPart>(), 1, ModContent.ItemType<MinorShopPart>(), 10000);
             workingCategories = new List<string>() { "Parts" };
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             foreach (PartRecipe pr in recipes)

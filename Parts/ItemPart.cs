@@ -49,7 +49,10 @@ namespace ARareItemSwapJPANs.Parts
             base.item.maxStack = 999;
             base.item.value = Item.sellPrice(0, 0, 0, 1);
             base.item.rare = 2;
-            base.item.useStyle = 1;
+            base.item.useStyle = 4;
+            base.item.useTime = 5;
+            base.item.useAnimation = 5;
+
         }
 
         public override void AddRecipes()

@@ -34,6 +34,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<HellUndergroundPart>(), 20, ItemID.GuideVoodooDoll, 1);
             workingCategories = makeAccessoryCategories(otherKeyword);
+            working.irreversible = true;
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, hellBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -422,10 +423,9 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
-            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 25, ItemID.ManaFlower, 1);
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 25, ItemID.NaturesGift, 1);
             workingCategories = makeAccessoryCategories(manaKeyword);
             workingCategories.AddRange(makeMaterialCategories(plantsMaterialKeyword));
-
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);

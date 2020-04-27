@@ -99,32 +99,38 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             for (int i = 0; i < armors.Count; i++)
             {
                 working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, armors[i], 1);
-                workingCategories = makeVanityCategories(armorHeadKeyword);
+                workingCategories = makeVanityCategories(armorHeadKeyword); 
+                working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
                 PartRecipes.addRecipe(working);
                 i++;
                 working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, armors[i], 1);
                 workingCategories = makeVanityCategories(armorBodyKeyword);
+                working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
                 PartRecipes.addRecipe(working);
                 i++;
                 working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, armors[i], 1);
                 workingCategories = makeVanityCategories(armorLegsKeyword);
+                working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
                 PartRecipes.addRecipe(working);
             }
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, ItemID.BejeweledValkyrieHead, 1);
             workingCategories = makeVanityCategories(armorHeadKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
             PartRecipes.addRecipe(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, ItemID.BejeweledValkyrieBody, 1);
             workingCategories = makeVanityCategories(armorBodyKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
             PartRecipes.addRecipe(working);
             for (int i = 0; i < accessories.Count; i++)
             {
                 working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, accessories[i], 1);
                 workingCategories = makeVanityCategories(accessoryKeyword);
+                working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
                 PartRecipes.addRecipe(working);
             }
@@ -133,16 +139,19 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             {
                 working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, dyes[i], 1);
                 workingCategories = makeVanityCategories(dyeKeyword);
+                working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
                 PartRecipes.addRecipe(working);
             }
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, ItemID.RedsYoyo, 1);
             workingCategories = makeWeaponsCategories(meleeDamageKeyword, yoyoWeaponKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
             PartRecipes.addRecipe(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, ItemID.ValkyrieYoyo, 1);
             workingCategories = makeWeaponsCategories(meleeDamageKeyword, yoyoWeaponKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
             PartRecipes.addRecipe(working);
 
@@ -1063,6 +1072,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             {
                 PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FishingPart>(), 20, fish, 1);
                 workingCategories = makeFishingCategories(questFishKeyword);
+                working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
                 working.irreversible = true;
                 PartRecipes.addRecipe(working);
@@ -1373,7 +1383,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, iceBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
-            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FishingPart>(), 1, ItemID.Hemopiranha, 2);
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FishingPart>(), 1, ItemID.CrimsonTigerfish, 2);
             workingCategories = makeFishingCategories(fishKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));

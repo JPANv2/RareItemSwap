@@ -22,7 +22,7 @@ namespace ARareItemSwapJPANs.Common.UI
         public SearchUITextBox search;
         public DestroyButton destroyButton;
         public DestroyAllButton destroyAllButton;
-
+        public CloseButton closeButton;
         public PathTreePanel categories;
         public RecipePanel recipes;
         public TokenPanel tokenList;
@@ -52,8 +52,8 @@ namespace ARareItemSwapJPANs.Common.UI
             panel.Append(destroySlot);
             search = new SearchUITextBox();
             search.Top.Set(0, 0);
-            search.Left.Set(destroySlot.Width.Pixels + destroySlot.MarginLeft + destroySlot.MarginRight, 0);
-            search.Width.Set(panel.GetInnerDimensions().Width - (destroySlot.Width.Pixels + destroySlot.MarginLeft + destroySlot.MarginRight), 0);
+            search.Left.Set(destroySlot.Width.Pixels + destroySlot.MarginLeft + destroySlot.MarginRight + 112, 0);
+            search.Width.Set(panel.GetInnerDimensions().Width - (destroySlot.Width.Pixels + destroySlot.MarginLeft + destroySlot.MarginRight + 12), 0);
             search.Height.Set(destroySlot.GetInnerDimensions().Height / 2, 0);
             search.OnTextChanged += () => setVisible(true);
             panel.Append(search);
@@ -75,6 +75,11 @@ namespace ARareItemSwapJPANs.Common.UI
             destroyAllButton.Width.Set(search.Width.Pixels / 6, 0);
 
             panel.Append(destroyAllButton);
+
+            closeButton = new CloseButton();
+            closeButton.Top.Set(search.Top.Pixels + search.Height.Pixels + 2, 0);
+            closeButton.Left.Set(panel.GetInnerDimensions().Width - 20, 0);
+            panel.Append(closeButton);
 
             categories = new PathTreePanel();
             categories.Top.Set(destroySlot.Height.Pixels + 12, 0);
@@ -110,8 +115,8 @@ namespace ARareItemSwapJPANs.Common.UI
             destroySlot.Left.Set(0, 0);
 
             search.Top.Set(0, 0);
-            search.Left.Set(destroySlot.Width.Pixels + destroySlot.MarginLeft + destroySlot.MarginRight, 0);
-            search.Width.Set(panel.GetInnerDimensions().Width - (destroySlot.Width.Pixels + destroySlot.MarginLeft + destroySlot.MarginRight), 0);
+            search.Left.Set(destroySlot.Width.Pixels + destroySlot.MarginLeft + destroySlot.MarginRight + 12, 0);
+            search.Width.Set(panel.GetInnerDimensions().Width - (destroySlot.Width.Pixels + destroySlot.MarginLeft + destroySlot.MarginRight + 12), 0);
             search.Height.Set(destroySlot.GetInnerDimensions().Height / 2, 0);
 
             destroyButton.Top.Set(search.Top.Pixels + search.Height.Pixels + 2, 0);
@@ -123,6 +128,9 @@ namespace ARareItemSwapJPANs.Common.UI
             destroyAllButton.Left.Set(destroyButton.Left.Pixels + destroyButton.Width.Pixels + 12, 0);
             destroyAllButton.Height.Set(destroySlot.GetInnerDimensions().Height / 2, 0);
             destroyAllButton.Width.Set(search.Width.Pixels / 6, 0);
+
+            closeButton.Top.Set(search.Top.Pixels + search.Height.Pixels + 2, 0);
+            closeButton.Left.Set(panel.GetInnerDimensions().Width - 20, 0);
 
             categories.Top.Set(destroySlot.Height.Pixels + 12, 0);
             categories.Left.Set(0, 0);
@@ -175,6 +183,22 @@ namespace ARareItemSwapJPANs.Common.UI
         internal static void onScrollWheelForUIText(UIScrollWheelEvent evt, UIElement listeningElement)
         {
             Main.LocalPlayer.ScrollHotbar(Terraria.GameInput.PlayerInput.ScrollWheelDelta / 360);
+        }
+    }
+
+    public class CloseButton : UIText
+    {
+        public CloseButton():base("X") 
+        {
+            this.TextColor = Color.Red;
+        }
+
+        public override void Click(UIMouseEvent evt)
+        {
+            if (IsMouseHovering)
+            {
+                PartExchangeUI.visible = false;
+            }
         }
     }
 }

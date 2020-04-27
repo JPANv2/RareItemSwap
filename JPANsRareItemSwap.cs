@@ -176,6 +176,21 @@ namespace ARareItemSwapJPANs
                     return;
                 }
             }
+            if (messageID == 1)
+            {
+                int player = reader.ReadByte();
+                int info = reader.ReadInt32();
+                if (Main.netMode == NetmodeID.Server || player != Main.myPlayer)
+                {
+                    PartsPlayer pl = Main.player[player].GetModPlayer<PartsPlayer>();
+                    pl.ZoneFakeGranite = ((info & 0x1) != 0);
+                    pl.ZoneRealGranite = ((info & 0x2) != 0);
+                    pl.ZoneFakeMarble = ((info & 0x4) != 0);
+                    pl.ZoneRealMarble = ((info & 0x8) != 0);
+                    pl.ZoneFakeSpiderCave = ((info & 0x10) != 0);
+                    pl.ZoneRealSpiderCave = ((info & 0x20) != 0);
+                }
+            }
         }
 
         public void addParts()

@@ -58,24 +58,28 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostPlanteraPart>(), 1, ItemID.SuperDartTrap, 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(trapWeaponKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostPlanteraPart>(), 1, ItemID.FlameTrap, 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(trapWeaponKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostPlanteraPart>(), 1, ItemID.SpikyBallTrap, 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(trapWeaponKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostPlanteraPart>(), 1, ItemID.SpearTrap, 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(trapWeaponKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
@@ -87,12 +91,14 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostPlanteraPart>(), 1, ItemID.WoodenSpike, 15);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(trapWeaponKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostPlanteraPart>(), 1, ItemID.LihzahrdPressurePlate, 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(trapWeaponKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
@@ -658,6 +664,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 5, ItemID.LihzahrdFurnace, 1);
             working.addPart(ModContent.ItemType<PostPlanteraPart>(), 20);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(stationKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
@@ -715,6 +722,13 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PostPlanteraPart>(), 3, ItemID.LihzahrdChest, 1);
+            working.available = () => NPC.downedPlantBoss;
+            workingCategories = makeFurnitureCategories(chestKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ForestSurfacePart>(), 3, ItemID.LivingWoodChest, 1);
             workingCategories = makeFurnitureCategories(chestKeyword);
             working.addCategoryAndSubcategories(workingCategories);
@@ -731,6 +745,12 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             workingCategories = makeFurnitureCategories(chestKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, oceanBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkySurfacePart>(), 3, ItemID.SkywareChest, 1);
+            workingCategories = makeFurnitureCategories(chestKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, skyBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
@@ -917,6 +937,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 5, ItemID.LihzahrdStatue, 1);
             working.addPart(ModContent.ItemType<PostPlanteraPart>(), 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(statueKeyword, decorativeKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
@@ -924,6 +945,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 5, ItemID.LihzahrdGuardianStatue, 1);
             working.addPart(ModContent.ItemType<PostPlanteraPart>(), 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(statueKeyword, decorativeKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
@@ -931,6 +953,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 5, ItemID.LihzahrdWatcherStatue, 1);
             working.addPart(ModContent.ItemType<PostPlanteraPart>(), 1);
+            working.available = () => NPC.downedPlantBoss;
             workingCategories = makeFurnitureCategories(statueKeyword, decorativeKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
@@ -1450,6 +1473,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             {
                 working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PaintingPart>(), 1, paint, 1);
                 workingCategories = makeFurnitureCategories(paintingKeyword);
+                working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
                 PartRecipes.addRecipe(working);
             }
@@ -1457,18 +1481,21 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PaintingPart>(), 1, ItemID.Catacomb, 1);
             working.addPart(ModContent.ItemType<DungeonUndergroundPart>(), 5);
             workingCategories = makeFurnitureCategories(paintingKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
             PartRecipes.addRecipe(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PaintingPart>(), 1, ItemID.HangingSkeleton, 1);
             working.addPart(ModContent.ItemType<DungeonUndergroundPart>(), 5);
             workingCategories = makeFurnitureCategories(paintingKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
             PartRecipes.addRecipe(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PaintingPart>(), 1, ItemID.WallSkeleton, 1);
             working.addPart(ModContent.ItemType<DungeonUndergroundPart>(), 5);
             workingCategories = makeFurnitureCategories(paintingKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
             PartRecipes.addRecipe(working);
         }
@@ -1526,6 +1553,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
                 PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MusicBoxPart>(), 1, box, 1);
                 workingCategories = makeFurnitureCategories(musicBoxKeyword);
                 workingCategories.AddRange(makeAccessoryCategories(musicBoxKeyword));
+                working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
                 PartRecipes.addRecipe(working);
             }

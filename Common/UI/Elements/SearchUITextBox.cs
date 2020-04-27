@@ -125,6 +125,17 @@ namespace ARareItemSwapJPANs.Common.UI.Elements
 				if (JustPressed(Keys.Enter))
 				{
 					Main.drawingPlayerChat = false;
+					Unfocus();
+					OnEnterPressed?.Invoke();
+				}
+				if (JustPressed(Keys.Escape))
+				{
+					Unfocus();
+					OnEnterPressed?.Invoke();
+				}
+				if (JustPressed(Keys.Tab))
+				{
+					Unfocus();
 					OnEnterPressed?.Invoke();
 				}
 				if (++textBlinkerCount >= 20)

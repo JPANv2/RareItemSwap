@@ -42,6 +42,11 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, goblinArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MarbleUndergroundPart>(), 1, ItemID.Javelin, 15);
+            workingCategories = makeWeaponsCategories(throwingDamageKeyword, thrownWeaponKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, marbleBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             foreach (PartRecipe pr in recipes)
             {
                 PartRecipes.addRecipe(pr);
@@ -377,6 +382,13 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SolarEclipsePart>(), 25, ItemID.DeathSickle, 1);
             workingCategories = makeWeaponsCategories(meleeDamageKeyword, otherKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, solarEclipseKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SolarEclipsePart>(), 40, ItemID.ButchersChainsaw, 1);
+            working.addPart(ModContent.ItemType<PostPlanteraPart>(), 25);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, axeWeaponKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, solarEclipseKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);

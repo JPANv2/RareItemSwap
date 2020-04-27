@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using ARareItemSwapJPANs.Common;
+using ARareItemSwapJPANs.Common.UI;
 using ARareItemSwapJPANs.Configs;
 using Terraria;
 using Terraria.ID;
@@ -58,14 +59,33 @@ namespace ARareItemSwapJPANs
         public override void UpdateBiomes()
         {
             base.UpdateBiomes();
-            ZoneFakeSpiderCave = Main.screenTileCounts[TileID.Cobweb] > 75;
-            ZoneFakeMarble = Main.screenTileCounts[TileID.Marble] > 75;
-            ZoneFakeGranite = Main.screenTileCounts[TileID.Granite] > 75;
+            if (Main.netMode != NetmodeID.Server && player.whoAmI == Main.myPlayer) {
+                ZoneFakeSpiderCave = Main.screenTileCounts[TileID.Cobweb] > 75;
+                ZoneFakeMarble = Main.screenTileCounts[TileID.Marble] > 75;
+                ZoneFakeGranite = Main.screenTileCounts[TileID.Granite] > 75;
 
-            updateWallCount();
-            ZoneRealSpiderCave = wallCount[WallID.SpiderUnsafe] > 40;
-            ZoneRealMarble = wallCount[WallID.MarbleUnsafe] > 40;
-            ZoneRealGranite = wallCount[WallID.GraniteUnsafe] > 40;
+                updateWallCount();
+                ZoneRealSpiderCave = wallCount[WallID.SpiderUnsafe] > 40;
+                ZoneRealMarble = wallCount[WallID.MarbleUnsafe] > 40;
+                ZoneRealGranite = wallCount[WallID.GraniteUnsafe] > 40;
+
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                {
+                    ModPacket pk = mod.GetPacket();
+                    pk.Write((byte)1);
+                    pk.Write((byte)player.whoAmI);
+                    int info = 0;
+                    info |= ZoneFakeGranite ? 1 : 0;
+                    info |= ZoneRealGranite ? 2 : 0;
+                    info |= ZoneFakeMarble ? 4 : 0;
+                    info |= ZoneRealMarble ? 8 : 0;
+                    info |= ZoneFakeSpiderCave ? 0x10 : 0;
+                    info |= ZoneRealSpiderCave ? 0x20 : 0;
+                    pk.Write((int)info);
+                    pk.Send();
+                }
+            }
+            
 
         }
 
@@ -187,6 +207,61 @@ namespace ARareItemSwapJPANs
                 return true;
             }
             return false;
+        }
+
+        public override bool ShiftClickSlot(Item[] inventory, int context, int slot)
+        {
+            if (PartExchangeUI.visible && inventory != null && inventory[slot] != null && !inventory[slot].IsAir)
+            {
+                if (ARareItemSwapJPANs.tokenList.Contains(ARareItemSwapJPANs.ItemToTag(inventory[slot])))
+                {
+                    this.addPart(inventory[slot]);
+                    inventory[slot].TurnToAir();
+                    return true;
+                }
+                if (PartRecipes.ContainsAsResult(inventory[slot]))
+                {
+                    List<PartRecipe> target = PartRecipes.recipesByResult[ARareItemSwapJPANs.ItemToTag(inventory[slot])];
+                    for (int i = 0; i < target.Count; i++)
+                    {
+                        if (target[i].irreversible || !target[i].isAvailable() || target[i].result.stack > inventory[slot].stack)
+                        {
+                            target.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                    if (target.Count > 0)
+                    {
+                        PartRecipe pr = target[0];
+                        int min = pr.result.stack;
+                        for (int i = 1; i < target.Count; i++)
+                        {
+                            if (min > target[i].result.stack)
+                            {
+                                min = target[i].result.stack;
+                                pr = target[i];
+                            }
+                        }
+
+                        int stack;
+                        int cnt = 0;
+                        do
+                        {
+                            stack = inventory[slot].stack;
+                            pr.refund(this, ref inventory[slot]);
+                            cnt++;
+                        }
+                        while (inventory[slot].stack > 0 && stack != inventory[slot].stack);
+                    }
+                    if (inventory[slot].stack <= 0)
+                    {
+                        inventory[slot].TurnToAir();
+                    }
+                }
+                return true;
+            }
+            return false;
+
         }
 
         #region save_load_update
