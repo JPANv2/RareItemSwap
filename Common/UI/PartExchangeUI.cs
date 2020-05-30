@@ -22,6 +22,8 @@ namespace ARareItemSwapJPANs.Common.UI
         public SearchUITextBox search;
         public DestroyButton destroyButton;
         public DestroyAllButton destroyAllButton;
+        public TooltipSearchButton tooltipSearch;
+        public ClearTextButton clearText;
         public CloseButton closeButton;
         public PathTreePanel categories;
         public RecipePanel recipes;
@@ -76,6 +78,23 @@ namespace ARareItemSwapJPANs.Common.UI
 
             panel.Append(destroyAllButton);
 
+            tooltipSearch = new TooltipSearchButton();
+            tooltipSearch.BackgroundColor = Color.Blue;
+            tooltipSearch.Top.Set(search.Top.Pixels + search.Height.Pixels + 2, 0);
+            tooltipSearch.Left.Set(destroyAllButton.Left.Pixels + destroyAllButton.Width.Pixels + 24, 0);
+            tooltipSearch.Height.Set(destroySlot.GetInnerDimensions().Height / 2, 0);
+            tooltipSearch.Width.Set(search.Width.Pixels / 6, 0);
+
+            panel.Append(tooltipSearch);
+
+            clearText = new ClearTextButton(search);
+            clearText.BackgroundColor = Color.Blue;
+            clearText.Top.Set(search.Top.Pixels + search.Height.Pixels + 2, 0);
+            clearText.Left.Set(tooltipSearch.Left.Pixels + tooltipSearch.Width.Pixels + 24, 0);
+            clearText.Height.Set(destroySlot.GetInnerDimensions().Height / 2, 0);
+            clearText.Width.Set(search.Width.Pixels / 6, 0);
+            panel.Append(clearText);
+
             closeButton = new CloseButton();
             closeButton.Top.Set(search.Top.Pixels + search.Height.Pixels + 2, 0);
             closeButton.Left.Set(panel.GetInnerDimensions().Width - 20, 0);
@@ -128,6 +147,18 @@ namespace ARareItemSwapJPANs.Common.UI
             destroyAllButton.Left.Set(destroyButton.Left.Pixels + destroyButton.Width.Pixels + 12, 0);
             destroyAllButton.Height.Set(destroySlot.GetInnerDimensions().Height / 2, 0);
             destroyAllButton.Width.Set(search.Width.Pixels / 6, 0);
+
+            tooltipSearch.BackgroundColor = Color.Blue;
+            tooltipSearch.Top.Set(search.Top.Pixels + search.Height.Pixels + 2, 0);
+            tooltipSearch.Left.Set(destroyAllButton.Left.Pixels + destroyAllButton.Width.Pixels + 24, 0);
+            tooltipSearch.Height.Set(destroySlot.GetInnerDimensions().Height / 2, 0);
+            tooltipSearch.Width.Set(search.Width.Pixels / 6, 0);
+
+            clearText.BackgroundColor = Color.Blue;
+            clearText.Top.Set(search.Top.Pixels + search.Height.Pixels + 2, 0);
+            clearText.Left.Set(tooltipSearch.Left.Pixels + tooltipSearch.Width.Pixels + 24, 0);
+            clearText.Height.Set(destroySlot.GetInnerDimensions().Height / 2, 0);
+            clearText.Width.Set(search.Width.Pixels / 6, 0);
 
             closeButton.Top.Set(search.Top.Pixels + search.Height.Pixels + 2, 0);
             closeButton.Left.Set(panel.GetInnerDimensions().Width - 20, 0);

@@ -300,7 +300,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, iceBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
-            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MimicPart>(), 100, ItemID.Frostbrand, 1);
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MimicPart>(), 100, ItemID.ToySled, 1);
             working.addPart(ModContent.ItemType<IceUndergroundPart>(), 10);
             workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, iceBiomeKeyword));

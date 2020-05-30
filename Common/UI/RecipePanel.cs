@@ -26,14 +26,21 @@ namespace ARareItemSwapJPANs.Common.UI
         private PathTreePanel changer;
         public PathTree selected = null;
         public Item selectedItem = null;
+
+        public int count = 0;
+        public bool hasChanges = false;
+        UIText loading = new UIText("Loading...");
+        Task t = null;
+        string search = "";
+        bool tooltipSearch = false;
+
+        public bool invalidatedList = false;
+        public bool changedToList = false;
+
         public static int orderByName(string x, string y) => ARareItemSwapJPANs.getItemFromTag(x).Name.CompareTo(ARareItemSwapJPANs.getItemFromTag(y).Name);
         
         
         public static int orderByID(string x, string y) => ARareItemSwapJPANs.getItemFromTag(x).type.CompareTo(ARareItemSwapJPANs.getItemFromTag(y).type);
-
-
-        public bool hasChanges = false;
-        //private TokenPanel tokens;
 
         public RecipePanel(PartExchangeUI panel)
         {
@@ -46,7 +53,7 @@ namespace ARareItemSwapJPANs.Common.UI
         public override void OnActivate()
         {
             base.OnActivate();
-            BackgroundColor = Color.LightGreen;
+            BackgroundColor = Color.Blue;
             BorderColor = Color.White;
             internalGrid = new UIGrid();
             internalGrid.OnScrollWheel += PartExchangeUI.onScrollWheel;
@@ -66,138 +73,206 @@ namespace ARareItemSwapJPANs.Common.UI
 
         public override void Update(GameTime gameTime)
         {
-            if(selected != changer.selected || selectedItem != parent.destroySlot.item || hasChanges)
+            if (tooltipSearch != parent.tooltipSearch.doSearch)
             {
-                selected = changer.selected;
-                selectedItem = parent.destroySlot.item;
-                internalGrid.Clear();
-                internalGrid.Left.Set(0, 0);
-                internalGrid.Top.Set(0, 0);
-                internalGrid.Width.Set(this.Width.Pixels - 4, 0);
-                internalGrid.Height.Set(this.Height.Pixels - 4, 0);
+                tooltipSearch = parent.tooltipSearch.doSearch;
+                invalidatedList = true;
+                changedToList = true;
+            }
 
-                float startX = 0;
-                float startY = 0;
-                if(parent.destroySlot.item != null && parent.destroySlot.item.type != 0  && !ARareItemSwapJPANs.tokenList.Contains(ARareItemSwapJPANs.ItemToTag(parent.destroySlot.item)) &&  PartRecipes.recipesByResult.ContainsKey(ARareItemSwapJPANs.ItemToTag(parent.destroySlot.item)))
+            if (selected != changer.selected || selectedItem != parent.destroySlot.item || !parent.search.GetText().Equals(search) || invalidatedList)
+            {
+                if (t == null)
                 {
-                    foreach (PartRecipe pr in PartRecipes.recipesByResult[ARareItemSwapJPANs.ItemToTag(parent.destroySlot.item)])
+                    selected = changer.selected;
+                    selectedItem = parent.destroySlot.item;
+                    search = parent.search.GetText();
+                    RemoveChild(internalGrid);
+                    loading.VAlign = 0.5f;
+                    loading.HAlign = 0.45f;
+                    Append(loading);
+                    t = Task.Run(recreateList);
+                }
+                else
+                {
+                    selected = changer.selected;
+                    search = parent.search.GetText();
+                    changedToList = true;
+                }
+            }
+            if (t != null)
+            {
+                if (t.IsCompleted)
+                {
+                    RemoveChild(loading);
+                    Append(internalGrid);
+                    hasChanges = true;
+                    invalidatedList = false;
+                    t.Dispose();
+                    t = null;
+                }
+            }
+            if (hasChanges)
+            {
+                if (t == null)
+                {
+                    internalGrid.Left.Set(0, 0);
+                    internalGrid.Top.Set(0, 0);
+                    internalGrid.Width.Set(this.Width.Pixels - 4, 0);
+                    internalGrid.Height.Set(this.Height.Pixels - 4, 0);
+                    internalGrid.Recalculate();
+                }
+                Recalculate();
+                hasChanges = false;
+            }
+            else
+            {
+                Recalculate();
+            }
+            base.Update(gameTime);
+        }
+
+        public void recreateList()
+        {
+            internalGrid.Left.Set(0, 0);
+            internalGrid.Top.Set(0, 0);
+            internalGrid.Width.Set(this.Width.Pixels - 4, 0);
+            internalGrid.Height.Set(this.Height.Pixels - 4, 0);
+
+            restart:
+            changedToList = false;
+            internalGrid.Clear();
+
+            if (parent.destroySlot.item != null && parent.destroySlot.item.type != 0 && !ARareItemSwapJPANs.tokenList.Contains(ARareItemSwapJPANs.ItemToTag(parent.destroySlot.item)) && PartRecipes.recipesByResult.ContainsKey(ARareItemSwapJPANs.ItemToTag(parent.destroySlot.item)))
+            {
+                foreach (PartRecipe pr in PartRecipes.recipesByResult[ARareItemSwapJPANs.ItemToTag(parent.destroySlot.item)])
+                {
+                    if (pr.isAvailable())
                     {
-                        if (pr.isAvailable())
+                        PurchaseItemSlot pt = new PurchaseItemSlot(pr);
+                        if (parent.selectedRecipe == null)
+                            parent.selectedRecipe = pr;
+                        if (pr.Equals(parent.selectedRecipe))
                         {
-                            PurchaseItemSlot pt = new PurchaseItemSlot(pr);
-                            if (parent.selectedRecipe == null)
-                                parent.selectedRecipe = pr;
-                            if (pr.Equals(parent.selectedRecipe))
-                            {
-                                pt.select(true);
-                            }
-                            /*pt.Left.Set(startX, 0);
-                            pt.Top.Set(startY, 0);
-                            startX += pt.Width.Pixels + 2;
-                            if (startX + pt.Width.Pixels + 2 > this.Width.Pixels - 4)
-                            {
-                                startX = 0;
-                                startY += pt.Height.Pixels + 2;
-                            }*/
-                            internalGrid.Add(pt);
+                            pt.select(true);
                         }
+                        internalGrid.Add(pt);
+                        if (changedToList)
+                            goto restart;
                     }
                 }
-                else if (selected.Equals(changer.allTree))
+            }
+            else if (selected.Equals(changer.availableTree))
+            {
+                List<PartRecipe> prtList = new List<PartRecipe>();
+
+                prtList.AddRange(PartRecipes.allRecipes);
+                prtList.Sort(PartRecipe.orderByResultName);
+                for (int i = 0; i < prtList.Count; i++)
+                {
+                    if (!prtList[i].isAvailable())
+                    {
+                        prtList.RemoveAt(i);
+                        i--;
+                    }
+                    else
+                    {
+                        if (!Main.player[Main.myPlayer].GetModPlayer<PartsPlayer>().CanCraftRecipe(prtList[i]))
+                        {
+                            prtList.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                    if (changedToList)
+                        goto restart;
+                }
+
+                foreach (PartRecipe pr in prtList)
+                {
+                    if (search == null || search.Length == 0 || pr.result.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(pr.result).ToLower().Contains(search.ToLower())))
+                    {
+                        PurchaseItemSlot pt = new PurchaseItemSlot(pr);
+                        internalGrid.Add(pt);
+                    }
+                    if (changedToList)
+                        goto restart;
+                }
+
+            }
+            else if (selected.Equals(changer.allTree))
+            {
+                List<PartRecipe> prtList = new List<PartRecipe>();
+
+                prtList.AddRange(PartRecipes.allRecipes);
+                prtList.Sort(PartRecipe.orderByResultName);
+
+                foreach (PartRecipe pr in prtList)
+                {
+                    if (pr.isAvailable())
+                    {
+                        if (search == null || search.Length == 0 || pr.result.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(pr.result).ToLower().Contains(search.ToLower())))
+                        {
+                            PurchaseItemSlot pt = new PurchaseItemSlot(pr);
+                            internalGrid.Add(pt);
+                        }
+                        if (changedToList)
+                            goto restart;
+                    }
+                }
+
+            }
+            else if (selected.Equals(changer.partsTree))
+            {
+                PartsPlayer prt = Main.player[Main.myPlayer].GetModPlayer<PartsPlayer>();
+                foreach (string s in ARareItemSwapJPANs.tokenList)
+                {
+                    if (prt.parts.ContainsKey(s))
+                    {
+                        Item part = ARareItemSwapJPANs.getItemFromTag(s);
+                        if (search == null || search.Length == 0 || part.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(part).ToLower().Contains(search.ToLower())))
+                        {
+                            PartItemSlot pt = new PartItemSlot(s, -1);
+                            internalGrid.Add(pt);
+                        }
+                        if (changedToList)
+                            goto restart;
+                    }
+                }
+            }
+            else
+            {
+                if (selected != null && PartRecipes.recipesByCategory.ContainsKey(selected.getFullPath()))
                 {
                     List<PartRecipe> prtList = new List<PartRecipe>();
-                    
-                    prtList.AddRange(PartRecipes.allRecipes);
+                    prtList.AddRange(PartRecipes.recipesByCategory[selected.getFullPath()]);
                     prtList.Sort(PartRecipe.orderByResultName);
-
                     foreach (PartRecipe pr in prtList)
                     {
                         if (pr.isAvailable())
                         {
-                            if (parent.search.GetText() == null || parent.search.GetText().Length == 0 || pr.result.Name.ToLower().Contains(parent.search.GetText().ToLower()))
+                            if (search == null || search.Length == 0 || pr.result.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(pr.result).ToLower().Contains(search.ToLower())))
                             {
                                 PurchaseItemSlot pt = new PurchaseItemSlot(pr);
-                                /* if (pr.Equals(parent.selectedRecipe))
-                                 {
-                                     pt.select(true);
-                                 }
-                                 pt.Left.Set(startX, 0);
-                                 pt.Top.Set(startY, 0);
-                                 startX += pt.Width.Pixels + 2;
-                                 if (startX + pt.Width.Pixels + 2 > this.Width.Pixels - 4)
-                                 {
-                                     startX = 0;
-                                     startY += pt.Height.Pixels + 2;
-                                 }*/
+                             
                                 internalGrid.Add(pt);
                             }
                         }
-                    }
-                   
-                }
-                else if (selected.Equals(changer.partsTree))
-                {
-                    PartsPlayer prt = Main.player[Main.myPlayer].GetModPlayer<PartsPlayer>();
-                    foreach (string s in ARareItemSwapJPANs.tokenList)
-                    {
-                        if (prt.parts.ContainsKey(s))
-                        {
-                            if (parent.search.GetText() == null || parent.search.GetText().Length == 0 || ARareItemSwapJPANs.getItemFromTag(s).Name.ToLower().Contains(parent.search.GetText().ToLower()))
-                            {
-                                PartItemSlot pt = new PartItemSlot(s, -1);
-                               /* pt.Left.Set(startX, 0);
-                                pt.Top.Set(startY, 0);
-                                startX += pt.Width.Pixels + 2;
-                                if (startX + pt.Width.Pixels + 2 > this.Width.Pixels - 4)
-                                {
-                                    startX = 0;
-                                    startY += pt.Height.Pixels + 2;
-                                }*/
-                                internalGrid.Add(pt);
-                            }
-                        }
+                        if (changedToList)
+                            goto restart;
                     }
                 }
-                else
-                {
-                    if (selected != null && PartRecipes.recipesByCategory.ContainsKey(selected.getFullPath()))
-                    {
-                        List<PartRecipe> prtList = new List<PartRecipe>();
-                        prtList.AddRange(PartRecipes.recipesByCategory[selected.getFullPath()]);
-                        prtList.Sort(PartRecipe.orderByResultName);
-                        foreach (PartRecipe pr in prtList)
-                        {
-                            if (pr.isAvailable())
-                            {
-                                if (parent.search.GetText() == null || parent.search.GetText().Length == 0 || pr.result.Name.ToLower().Contains(parent.search.GetText().ToLower()))
-                                {
-                                    PurchaseItemSlot pt = new PurchaseItemSlot(pr);
-                                    /*if (pr.Equals(parent.selectedRecipe))
-                                    {
-                                        pt.select(true);
-                                    }
-                                    pt.Left.Set(startX, 0);
-                                    pt.Top.Set(startY, 0);
-                                    startX += pt.Width.Pixels + 2;
-                                    if (startX + pt.Width.Pixels + 2 > this.Width.Pixels - 4)
-                                    {
-                                        startX = 0;
-                                        startY += pt.Height.Pixels + 2;
-                                    }*/
-                                    internalGrid.Add(pt);
-                                }
-                            }
-                        }
-                    }
-                }
-                //internalGrid.Height.Set(Math.Max(this.Height.Pixels, startY + parent.destroySlot.Height.Pixels + 2), 0);
-                internalGrid.Recalculate();
-                Recalculate();
-
-                hasChanges = false;
             }
-            Recalculate();
-            base.Update(gameTime);
+        }
+        private string condensedTooltip(Item item)
+        {
+            String s = "";
+            item.RebuildTooltip();
+            for (int i = 0; i < item.ToolTip.Lines; i++)
+            {
+                s += item.ToolTip.GetLine(i);
+                s += "\n";
+            }
+            return s;
         }
     }
 
@@ -264,5 +339,8 @@ namespace ARareItemSwapJPANs.Common.UI
             }
             base.Update(gameTime);
         }
+        
     }
+
+
 }

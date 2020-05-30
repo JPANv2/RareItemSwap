@@ -50,6 +50,12 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ForestUndergroundPart>(), 2, ItemID.Detonator, 1);
+            workingCategories = makeFurnitureCategories(trapWeaponKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ForestUndergroundPart>(), 8, ItemID.GeyserTrap, 1);
             workingCategories = makeFurnitureCategories(trapWeaponKeyword);
             working.addCategoryAndSubcategories(workingCategories);

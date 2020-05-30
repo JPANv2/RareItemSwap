@@ -1,5 +1,6 @@
 author = JPAN
-version = 1.0
+version = 1.2.2
 displayName = Rare Item Swap
 hideCode = false
 hideResources = false
+homepage = https://forums.terraria.org/index.php?threads/rare-item-swap.88076/

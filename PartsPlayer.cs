@@ -209,6 +209,20 @@ namespace ARareItemSwapJPANs
             return false;
         }
 
+        public bool CanCraftRecipe(PartRecipe toCraft)
+        {
+            foreach (Item itm in toCraft.parts)
+            {
+                if (!parts.ContainsKey(ARareItemSwapJPANs.ItemToTag(itm)))
+                {
+                    return false;
+                }
+                if ((long)parts[ARareItemSwapJPANs.ItemToTag(itm)] < itm.stack)
+                    return false;
+            }
+            return true;
+        }
+
         public override bool ShiftClickSlot(Item[] inventory, int context, int slot)
         {
             if (PartExchangeUI.visible && inventory != null && inventory[slot] != null && !inventory[slot].IsAir)

@@ -17,6 +17,7 @@ namespace ARareItemSwapJPANs.Common.UI.Elements
     public class PathTreePanel : UIPanel
     {
         public PathTree allTree = PathTree.makePathTree("", "All");
+        public PathTree availableTree = PathTree.makePathTree("", "Available");
         public PathTree partsTree = PathTree.makePathTree("", "Part Bank");
         public PathTree paths;
         public UIGridList internalGrid;
@@ -88,8 +89,14 @@ namespace ARareItemSwapJPANs.Common.UI.Elements
             
             if (all.tree.SimpleEquals(selected))
                 all.TextColor = Color.LimeGreen;
-
+            
             internalGrid.Add(all);
+
+            UIPathTreeText av = new UIPathTreeText(this, availableTree);
+            av.Left.Set(startX, 0);
+            if (av.tree.SimpleEquals(selected))
+                av.TextColor = Color.LimeGreen;
+            internalGrid.Add(av);
 
             List<String> keys = new List<string>();
             keys.AddRange(paths.tree.Keys);

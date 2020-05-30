@@ -318,7 +318,6 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             recipes.AddRange(buildCommonShopRecipe(ItemID.BeachBall, new List<string>() { utilityKeyword }, PartyGirlKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.LavaLamp, makeFurnitureCategories(lightSourceKeyword), PartyGirlKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.FireworksBox, makeFurnitureCategories(trapWeaponKeyword), PartyGirlKeyword));
-            recipes.AddRange(buildCommonShopRecipe(ItemID.FireworksLauncher, makeFurnitureCategories(trapWeaponKeyword), PartyGirlKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.RedRocket, makeFurnitureCategories(trapWeaponKeyword), PartyGirlKeyword, ()=> Main.hardMode));
             recipes.AddRange(buildCommonShopRecipe(ItemID.GreenRocket, makeFurnitureCategories(trapWeaponKeyword), PartyGirlKeyword, () => Main.hardMode));
             recipes.AddRange(buildCommonShopRecipe(ItemID.BlueRocket, makeFurnitureCategories(trapWeaponKeyword), PartyGirlKeyword, () => Main.hardMode));
