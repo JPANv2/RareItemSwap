@@ -676,6 +676,14 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<JungleUndergroundPart>(), 5, ItemID.LihzahrdWorkBench, 1);
+            working.addPart(ModContent.ItemType<PostPlanteraPart>(), 5);
+            working.available = () => NPC.downedPlantBoss;
+            workingCategories = makeFurnitureCategories(stationKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, jungleBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<ForestUndergroundPart>(), 30, ItemID.SharpeningStation, 1);
             workingCategories = makeFurnitureCategories(stationKeyword);
             working.addCategoryAndSubcategories(workingCategories);

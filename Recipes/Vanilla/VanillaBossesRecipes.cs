@@ -394,37 +394,37 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<IceQueenPart>(), 50, ItemID.IceQueenTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, iceQueenKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<IceQueenPart>(), 20, ItemID.SnowmanCannon, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, iceQueenKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<IceQueenPart>(), 20, ItemID.BlizzardStaff, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, iceQueenKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<IceQueenPart>(), 20, ItemID.NorthPole, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, spearWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, spearWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, iceQueenKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<IceQueenPart>(), 100, ItemID.BabyGrinchMischiefWhistle, 1);
-            workingCategories = makePetsCategories(normalPetsKeyword);
+            workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, iceQueenKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<IceQueenPart>(), 150, ItemID.ReindeerBells, 1);
-            workingCategories = new List<string>() { mountKeyword };
+            workingCategories = new List<string>() { mountKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, iceQueenKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -441,19 +441,19 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SantaNK1Part>(), 50, ItemID.SantaNK1Trophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, santaNK1Keyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SantaNK1Part>(), 20, ItemID.EldMelter, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, flamethrowerWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, flamethrowerWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, santaNK1Keyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SantaNK1Part>(), 20, ItemID.ChainGun, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, santaNK1Keyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -471,31 +471,31 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EverscreamPart>(), 50, ItemID.EverscreamTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, everscreamKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EverscreamPart>(), 100, ItemID.FestiveWings, 1);
-            workingCategories = makeAccessoryCategories(movementKeyword, movementFlyingKeyword);
+            workingCategories = makeAccessoryCategories(movementKeyword, movementFlyingKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, everscreamKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EverscreamPart>(), 50, ItemID.ChristmasHook, 1);
-            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword };
+            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, everscreamKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EverscreamPart>(), 50, ItemID.Razorpine, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, everscreamKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EverscreamPart>(), 50, ItemID.ChristmasTreeSword, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, everscreamKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, frostMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -512,61 +512,61 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 20, ItemID.PumpkingTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 20, ItemID.BlackFairyDust, 1);
-            workingCategories = makeMaterialCategories(otherKeyword);
+            workingCategories = makeMaterialCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 20, ItemID.SpiderEgg, 1);
-            workingCategories = makePetsCategories(normalPetsKeyword);
+            workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 1, ItemID.CandyCorn, 20);
-            workingCategories = makeAmmoCategories(otherKeyword, rangedDamageKeyword);
+            workingCategories = makeAmmoCategories(otherKeyword, rangedDamageKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 1, ItemID.ExplosiveJackOLantern, 10);
-            workingCategories = makeAmmoCategories(otherKeyword, rangedDamageKeyword);
+            workingCategories = makeAmmoCategories(otherKeyword, rangedDamageKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 20, ItemID.CandyCornRifle, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 20, ItemID.JackOLanternLauncher, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 20, ItemID.TheHorsemansBlade, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 20, ItemID.RavenStaff, 1);
-            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PumpkingPart>(), 20, ItemID.BatScepter, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, pumpkingKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -583,50 +583,50 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MourningWoodPart>(), 20, ItemID.MourningWoodTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, mourningWoodKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MourningWoodPart>(), 1, ItemID.SpookyWood, 10);
-            workingCategories = makeMaterialCategories(woodMaterialKeyword);
+            workingCategories = makeMaterialCategories(woodMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, mourningWoodKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MourningWoodPart>(), 1, ItemID.Stake, 10);
-            workingCategories = makeAmmoCategories(otherKeyword, rangedDamageKeyword);
+            workingCategories = makeAmmoCategories(otherKeyword, rangedDamageKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, mourningWoodKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MourningWoodPart>(), 20, ItemID.StakeLauncher, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, otherKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, mourningWoodKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MourningWoodPart>(), 20, ItemID.NecromanticScroll, 1);
             workingCategories = makeAccessoryCategories(offenseKeyword, summonerDamageKeyword);
-            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword));
+            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword)); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, mourningWoodKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MourningWoodPart>(), 20, ItemID.SpookyTwig, 1);
-            workingCategories = makeMaterialCategories(otherKeyword);
+            workingCategories = makeMaterialCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, mourningWoodKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MourningWoodPart>(), 20, ItemID.CursedSapling, 1);
-            workingCategories = makePetsCategories(normalPetsKeyword);
+            workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, mourningWoodKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MourningWoodPart>(), 20, ItemID.SpookyHook, 1);
-            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword };
+            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, mourningWoodKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pumpkinMoonKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -644,61 +644,61 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 50, ItemID.MartianSaucerTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 20, ItemID.InfluxWaver, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 20, ItemID.XenoStaff, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 20, ItemID.LaserMachinegun, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 20, ItemID.ChargedBlasterCannon, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 20, ItemID.Xenopopper, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 20, ItemID.ElectrosphereLauncher, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 20, ItemID.LaserDrill, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, pickaxeWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, pickaxeWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 20, ItemID.CosmicCarKey, 1);
-            workingCategories = new List<string>() { mountKeyword };
+            workingCategories = new List<string>() { mountKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MartianSaucerPart>(), 20, ItemID.AntiGravityHook, 1);
-            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword };
+            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, martianSaucerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, martianInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -716,19 +716,19 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GoblinSummonerPart>(), 20, ItemID.ShadowFlameKnife, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, otherKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, goblinSummonerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, goblinArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GoblinSummonerPart>(), 20, ItemID.ShadowFlameBow, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, goblinSummonerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, goblinArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GoblinSummonerPart>(), 20, ItemID.ShadowFlameHexDoll, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, otherKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, goblinSummonerKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, goblinArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -745,44 +745,44 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FlyingDutchmanPart>(), 20, ItemID.FlyingDutchmanTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, flyingDutchmanKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pirateInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FlyingDutchmanPart>(), 20, ItemID.Cutlass, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, flyingDutchmanKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pirateInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FlyingDutchmanPart>(), 50, ItemID.GoldRing, 1);
-            workingCategories = makeAccessoryCategories(otherKeyword);
+            workingCategories = makeAccessoryCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, flyingDutchmanKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pirateInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FlyingDutchmanPart>(), 100, ItemID.DiscountCard, 1);
-            workingCategories = makeAccessoryCategories(otherKeyword);
+            workingCategories = makeAccessoryCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, flyingDutchmanKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pirateInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FlyingDutchmanPart>(), 100, ItemID.PirateStaff, 1);
-            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, flyingDutchmanKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pirateInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FlyingDutchmanPart>(), 150, ItemID.LuckyCoin, 1);
-            workingCategories = makeAccessoryCategories(otherKeyword);
+            workingCategories = makeAccessoryCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, flyingDutchmanKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pirateInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FlyingDutchmanPart>(), 200, ItemID.CoinGun, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, flyingDutchmanKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, pirateInvasionKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -800,49 +800,49 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BetsyPart>(), 200, ItemID.BossBagBetsy, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, betsyKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BetsyPart>(), 50, ItemID.BossTrophyBetsy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, betsyKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BetsyPart>(), 50, ItemID.BossMaskBetsy, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, betsyKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BetsyPart>(), 40, ItemID.BetsyWings, 1);
-            workingCategories = makeAccessoryCategories(movementKeyword, movementFlyingKeyword);
+            workingCategories = makeAccessoryCategories(movementKeyword, movementFlyingKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, betsyKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BetsyPart>(), 20, 3870, 1); //Betsy's Wrath
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, betsyKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BetsyPart>(), 20, 3858, 1); //Sky dragon's fury
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, betsyKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BetsyPart>(), 20, 3827, 1); //Flying Dragon
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, betsyKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BetsyPart>(), 20, ItemID.DD2BetsyBow, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, betsyKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -859,89 +859,78 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<PartRecipe> recipes = new List<PartRecipe>();
             List<string> workingCategories;
 
-            PartRecipe/* working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 200, ItemID.FishronBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
-            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
-            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
-            */
-            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, ItemID.BossTrophyOgre, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, ItemID.BossTrophyOgre, 1);
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, ItemID.BossMaskOgre, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
-            /* working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 100, ItemID.ShrimpyTruffle, 1);
-             workingCategories = new List<string>() { mountKeyword };
-             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
-             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
-             */
-
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 20, ItemID.DD2PetGhost, 1);
-            workingCategories = makePetsCategories(lightPetsKeyword);
+            workingCategories = makePetsCategories(lightPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, ItemID.ApprenticeScarf, 1);
             workingCategories = makeAccessoryCategories(offenseKeyword, summonerDamageKeyword);
-            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword));
+            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword)); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, ItemID.SquireShield, 1);
             workingCategories = makeAccessoryCategories(offenseKeyword, summonerDamageKeyword);
-            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword));
+            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword)); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, ItemID.HuntressBuckler, 1);
             workingCategories = makeAccessoryCategories(offenseKeyword, summonerDamageKeyword);
-            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword));
+            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword)); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, ItemID.MonkBelt, 1);
             workingCategories = makeAccessoryCategories(offenseKeyword, summonerDamageKeyword);
-            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword));
+            workingCategories.AddRange(makeAccessoryCategories(summonerDamageKeyword, offenseKeyword)); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, 3852, 1); //Tome of infinite wisdom
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, 3835, 1); //Sleepy Octopod
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, 3823, 1); //Brand of the Inferno
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, 3836, 1); //Ghastly Glaive
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, spearWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, spearWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<OgrePart>(), 40, 3854, 1); //Phantom Pheonix
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, ogreKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -958,48 +947,38 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<PartRecipe> recipes = new List<PartRecipe>();
             List<string> workingCategories;
 
-            PartRecipe/* working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 200, ItemID.FishronBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
-            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
-            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
-            */
-            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DarkMagePart>(), 40, ItemID.BossTrophyDarkmage, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DarkMagePart>(), 40, ItemID.BossTrophyDarkmage, 1);
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, darkMageKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DarkMagePart>(), 40, ItemID.BossMaskDarkMage, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, darkMageKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
-            /* working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 100, ItemID.ShrimpyTruffle, 1);
-             workingCategories = new List<string>() { mountKeyword };
-             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
-             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
-             */
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DarkMagePart>(), 40, ItemID.WarTable, 1);
-            workingCategories = makeFurnitureCategories(stationKeyword);
+            workingCategories = makeFurnitureCategories(stationKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, darkMageKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DarkMagePart>(), 10, ItemID.WarTableBanner, 1);
-            workingCategories = makeFurnitureCategories(otherKeyword);
+            workingCategories = makeFurnitureCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, darkMageKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DarkMagePart>(), 20, ItemID.DD2PetDragon, 1);
-            workingCategories = makePetsCategories(normalPetsKeyword);
+            workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, darkMageKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DarkMagePart>(), 20, ItemID.DD2PetGato, 1);
-            workingCategories = makePetsCategories(normalPetsKeyword);
+            workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, darkMageKeyword));
             working.addCategoryAndSubcategories(makeByEventCategories(workingCategories, oldOnesArmyKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -1016,84 +995,84 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 200, ItemID.MoonLordBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 50, ItemID.MoonLordTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 50, ItemID.BossMaskMoonlord, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 50, ItemID.SuspiciousLookingTentacle, 1);
-            workingCategories = makePetsCategories(lightPetsKeyword);
+            workingCategories = makePetsCategories(lightPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 50, ItemID.GravityGlobe, 1);
-            workingCategories = new List<string>() { utilityKeyword };
+            workingCategories = new List<string>() { utilityKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 2, ItemID.PortalGun, 1);
-            workingCategories = new List<string>() { utilityKeyword };
+            workingCategories = new List<string>() { utilityKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 1, ItemID.LunarOre, 20);
-            workingCategories = makeMaterialCategories(oreMaterialKeyword);
+            workingCategories = makeMaterialCategories(oreMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 20, ItemID.Meowmere, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 20, ItemID.StarWrath, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 20, ItemID.Terrarian, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, yoyoWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, yoyoWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 20, ItemID.SDMG, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 20, 3546, 1); //celebration
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 20, ItemID.LastPrism, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, otherKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 20, ItemID.LunarFlareBook, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, bookWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, bookWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 20, ItemID.RainbowCrystalStaff, 1);
-            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<MoonLordPart>(), 20, 3569, 1); //lunar portal
-            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, moonLordKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -1116,28 +1095,18 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<PartRecipe> recipes = new List<PartRecipe>();
             List<string> workingCategories;
 
-            PartRecipe/* working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 200, ItemID.FishronBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
-            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
-            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
-            */
-            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<LunaticCultistPart>(), 50, ItemID.AncientCultistTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<LunaticCultistPart>(), 50, ItemID.AncientCultistTrophy, 1);
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, cultistKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<LunaticCultistPart>(), 50, ItemID.BossMaskCultist, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, cultistKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
-            /* working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 100, ItemID.ShrimpyTruffle, 1);
-             workingCategories = new List<string>() { mountKeyword };
-             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
-             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
-             */
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<LunaticCultistPart>(), 2, ItemID.LunarCraftingStation, 1);
-            workingCategories = makeFurnitureCategories(stationKeyword);
+            workingCategories = makeFurnitureCategories(stationKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, cultistKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -1153,43 +1122,48 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 200, ItemID.FishronBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 50, ItemID.DukeFishronTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 50, ItemID.DukeFishronMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 100, ItemID.ShrimpyTruffle, 1);
-            workingCategories = new List<string>() { mountKeyword };
+            workingCategories = new List<string>() { mountKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 20, ItemID.Tsunami, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 20, ItemID.BubbleGun, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 20, ItemID.RazorbladeTyphoon, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, bookWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, bookWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 20, ItemID.Flairon, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, flailWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, flailWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DukeFishronPart>(), 20, ItemID.FishronWings, 1);
+            workingCategories = makeAccessoryCategories(movementKeyword, movementFlyingKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, dukeFishronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -1213,73 +1187,73 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 200, ItemID.GolemBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 50, ItemID.GolemTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 50, ItemID.GolemMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 100, ItemID.ShinyStone, 1);
-            workingCategories = makeAccessoryCategories(lifeKeyword);
+            workingCategories = makeAccessoryCategories(lifeKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 20, ItemID.Stynger, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 1, ItemID.StyngerBolt, 20);
-            workingCategories = makeAmmoCategories(rangedDamageKeyword, launcherWeaponKeyword);
+            workingCategories = makeAmmoCategories(rangedDamageKeyword, launcherWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 20, ItemID.HeatRay, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 20, ItemID.Picksaw, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, pickaxeWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, pickaxeWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 20, ItemID.StaffofEarth, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 20, ItemID.PossessedHatchet, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, boomerangWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, boomerangWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 20, ItemID.GolemFist, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, flailWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, flailWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 20, ItemID.SunStone, 1);
             workingCategories = makeAccessoryCategories(offenseKeyword);
-            workingCategories.AddRange(makeAccessoryCategories(defenseKeyword));
+            workingCategories.AddRange(makeAccessoryCategories(defenseKeyword)); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 20, ItemID.EyeoftheGolem, 1);
-            workingCategories = makeAccessoryCategories(offenseKeyword);
+            workingCategories = makeAccessoryCategories(offenseKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<GolemPart>(), 1, ItemID.BeetleHusk, 2);
-            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword);
+            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, golemKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -1304,84 +1278,84 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 200, ItemID.PlanteraBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 50, ItemID.PlanteraTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 50, ItemID.PlanteraMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 100, ItemID.SporeSac, 1);
-            workingCategories = makeAccessoryCategories(defenseKeyword, otherKeyword);
+            workingCategories = makeAccessoryCategories(defenseKeyword, otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 100, ItemID.Seedling, 1);
-            workingCategories = makePetsCategories(normalPetsKeyword);
+            workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 250, ItemID.TheAxe, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, axeWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, axeWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 25, ItemID.PygmyStaff, 1);
-            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(summonerDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 20, ItemID.GrenadeLauncher, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, launcherWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 20, ItemID.VenusMagnum, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 20, ItemID.LeafBlower, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 20, ItemID.WaspGun, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 20, ItemID.NettleBurst, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 20, ItemID.Seedler, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 20, ItemID.FlowerPow, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, flailWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, flailWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 20, ItemID.ThornHook, 1);
-            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword };
+            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<PlanteraPart>(), 5, ItemID.TempleKey, 1);
-            workingCategories = new List<string> { utilityKeyword };
+            workingCategories = new List<string> { utilityKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, planteraKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -1397,34 +1371,34 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPrimePart>(), 200, ItemID.SkeletronPrimeBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPrimePart>(), 50, ItemID.SkeletronPrimeTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPrimePart>(), 50, ItemID.SkeletronPrimeMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPrimePart>(), 100, ItemID.MechanicalBatteryPiece, 1);
-            workingCategories = makeMaterialCategories(otherKeyword);
+            workingCategories = makeMaterialCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPrimePart>(), 1, ItemID.HallowedBar, 6);
-            workingCategories = makeMaterialCategories(barsMaterialKeyword);
+            workingCategories = makeMaterialCategories(barsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPrimePart>(), 1, ItemID.SoulofFright, 8);
-            workingCategories = makeMaterialCategories(SoulsMaterialKeyword);
+            workingCategories = makeMaterialCategories(SoulsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
-            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPrimePart>(), 1, ItemID.MechanicalSkull, 1);
             workingCategories = new List<string>() { utilityKeyword };
@@ -1444,34 +1418,34 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheDestroyerPart>(), 200, ItemID.DestroyerBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheDestroyerPart>(), 50, ItemID.DestroyerTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheDestroyerPart>(), 50, ItemID.DestroyerMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheDestroyerPart>(), 100, ItemID.MechanicalWagonPiece, 1);
-            workingCategories = makeMaterialCategories(otherKeyword);
+            workingCategories = makeMaterialCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheDestroyerPart>(), 1, ItemID.HallowedBar, 6);
-            workingCategories = makeMaterialCategories(barsMaterialKeyword);
+            workingCategories = makeMaterialCategories(barsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheDestroyerPart>(), 1, ItemID.SoulofMight, 8);
-            workingCategories = makeMaterialCategories(SoulsMaterialKeyword);
+            workingCategories = makeMaterialCategories(SoulsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
-            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheDestroyerPart>(), 1, ItemID.MechanicalWorm, 1);
             workingCategories = new List<string>() { utilityKeyword };
@@ -1493,39 +1467,39 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 200, ItemID.TwinsBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 50, ItemID.SpazmatismTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 50, ItemID.RetinazerTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 50, ItemID.TwinMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 100, ItemID.MechanicalWheelPiece, 1);
-            workingCategories = makeMaterialCategories(otherKeyword);
+            workingCategories = makeMaterialCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 1, ItemID.HallowedBar, 6);
-            workingCategories = makeMaterialCategories(barsMaterialKeyword);
+            workingCategories = makeMaterialCategories(barsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 1, ItemID.SoulofSight, 8);
-            workingCategories = makeMaterialCategories(SoulsMaterialKeyword);
+            workingCategories = makeMaterialCategories(SoulsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
-            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 2, ItemID.MechanicalEye, 1);
             workingCategories = new List<string>() { utilityKeyword };
@@ -1547,53 +1521,53 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 200, ItemID.WallOfFleshBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 50, ItemID.WallofFleshTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 50, ItemID.FleshMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 20, ItemID.BreakerBlade, 1);
-            workingCategories = makeAccessoryCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeAccessoryCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 20, ItemID.ClockworkAssaultRifle, 1);
-            workingCategories = makeAccessoryCategories(rangedDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeAccessoryCategories(rangedDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 20, ItemID.LaserRifle, 1);
-            workingCategories = makeAccessoryCategories(magicDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeAccessoryCategories(magicDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 20, ItemID.WarriorEmblem, 1);
-            workingCategories = makeAccessoryCategories(offenseKeyword, meleeDamageKeyword);
+            workingCategories = makeAccessoryCategories(offenseKeyword, meleeDamageKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 20, ItemID.RangerEmblem, 1);
-            workingCategories = makeAccessoryCategories(offenseKeyword, rangedDamageKeyword);
+            workingCategories = makeAccessoryCategories(offenseKeyword, rangedDamageKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 20, ItemID.SorcererEmblem, 1);
-            workingCategories = makeAccessoryCategories(offenseKeyword, magicDamageKeyword);
+            workingCategories = makeAccessoryCategories(offenseKeyword, magicDamageKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 20, ItemID.SummonerEmblem, 1);
-            workingCategories = makeAccessoryCategories(offenseKeyword, summonerDamageKeyword);
+            workingCategories = makeAccessoryCategories(offenseKeyword, summonerDamageKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<WallOfFleshPart>(), 5, ItemID.Pwnhammer, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, hammerWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, hammerWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, wofKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -1618,33 +1592,33 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPart>(), 200, ItemID.SkeletronBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPart>(), 50, ItemID.SkeletronTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPart>(), 50, ItemID.SkeletronMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPart>(), 100, ItemID.BoneGlove, 1);
-            workingCategories = makeWeaponsCategories(throwingDamageKeyword, otherKeyword);
+            workingCategories = makeWeaponsCategories(throwingDamageKeyword, otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPart>(), 40, ItemID.SkeletronHand, 1);
-            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword };
+            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<SkeletronPart>(), 40, ItemID.BookofSkulls, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, bookWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, bookWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -1668,83 +1642,83 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 200, ItemID.QueenBeeBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 50, ItemID.QueenBeeTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 50, ItemID.BeeMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 100, ItemID.HiveBackpack, 1);
-            workingCategories = makeAccessoryCategories(otherKeyword);
+            workingCategories = makeAccessoryCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 100, ItemID.Nectar, 1);
-            workingCategories = makePetsCategories(normalPetsKeyword);
+            workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 100, ItemID.HoneyedGoggles, 1);
-            workingCategories = new List<string>() { mountKeyword };
+            workingCategories = new List<string>() { mountKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 25, ItemID.BeeHat, 1);
-            workingCategories = makeVanityCategories(armorHeadKeyword);
+            workingCategories = makeVanityCategories(armorHeadKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 25, ItemID.BeeShirt, 1);
-            workingCategories = makeVanityCategories(armorBodyKeyword);
+            workingCategories = makeVanityCategories(armorBodyKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 25, ItemID.BeePants, 1);
-            workingCategories = makeVanityCategories(armorLegsKeyword);
+            workingCategories = makeVanityCategories(armorLegsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 20, ItemID.HiveWand, 1);
-            workingCategories = new List<string>() { utilityKeyword };
+            workingCategories = new List<string>() { utilityKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 20, ItemID.HoneyComb, 1);
-            workingCategories = makeAccessoryCategories(defenseKeyword, otherKeyword);
+            workingCategories = makeAccessoryCategories(defenseKeyword, otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 20, ItemID.BeeGun, 1);
-            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(magicDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 20, ItemID.BeeKeeper, 1);
-            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword);
+            workingCategories = makeWeaponsCategories(meleeDamageKeyword, swordWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 20, ItemID.BeesKnees, 1);
-            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword);
+            workingCategories = makeWeaponsCategories(rangedDamageKeyword, bowWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 1, ItemID.Beenade, 5);
-            workingCategories = makeWeaponsCategories(throwingDamageKeyword, explosiveWeaponKeyword);
+            workingCategories = makeWeaponsCategories(throwingDamageKeyword, explosiveWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<QueenBeePart>(), 1, ItemID.BeeWax, 5);
-            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword);
+            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, queenBeeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -1768,39 +1742,39 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BrainOfCthulhuPart>(), 200, ItemID.BrainOfCthulhuBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, bocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BrainOfCthulhuPart>(), 50, ItemID.BrainofCthulhuTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, bocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BrainOfCthulhuPart>(), 50, ItemID.BrainMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, bocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BrainOfCthulhuPart>(), 100, ItemID.BrainOfConfusion, 1);
             workingCategories = makeAccessoryCategories(defenseKeyword, immunityKeyword);
-            workingCategories.AddRange(makeAccessoryCategories(immunityKeyword, defenseKeyword));
+            workingCategories.AddRange(makeAccessoryCategories(immunityKeyword, defenseKeyword)); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, bocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BrainOfCthulhuPart>(), 100, ItemID.BoneRattle, 1);
-            workingCategories = makePetsCategories(normalPetsKeyword);
+            workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, bocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BrainOfCthulhuPart>(), 5, ItemID.TissueSample, 100);
-            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword);
+            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, bocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<BrainOfCthulhuPart>(), 5, ItemID.CrimtaneOre, 200);
-            workingCategories = makeMaterialCategories(oreMaterialKeyword);
+            workingCategories = makeMaterialCategories(oreMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, bocKeyword));
@@ -1826,38 +1800,38 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EaterOfWorldsPart>(), 200, ItemID.EaterOfWorldsBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eowKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EaterOfWorldsPart>(), 50, ItemID.EaterofWorldsTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eowKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EaterOfWorldsPart>(), 50, ItemID.EaterMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eowKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EaterOfWorldsPart>(), 100, ItemID.WormScarf, 1);
-            workingCategories = makeAccessoryCategories(defenseKeyword);
+            workingCategories = makeAccessoryCategories(defenseKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eowKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EaterOfWorldsPart>(), 100, ItemID.EatersBone, 1);
-            workingCategories = makePetsCategories(normalPetsKeyword);
+            workingCategories = makePetsCategories(normalPetsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eowKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EaterOfWorldsPart>(), 5, ItemID.ShadowScale, 100);
-            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword);
+            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eowKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EaterOfWorldsPart>(), 5, ItemID.DemoniteOre, 200);
-            workingCategories = makeMaterialCategories(oreMaterialKeyword);
+            workingCategories = makeMaterialCategories(oreMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eowKeyword));
@@ -1883,41 +1857,41 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EyeOfCthulhuPart>(), 200, ItemID.EyeOfCthulhuBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EyeOfCthulhuPart>(), 50, ItemID.EyeofCthulhuTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EyeOfCthulhuPart>(), 50, ItemID.EyeMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EyeOfCthulhuPart>(), 100, ItemID.EoCShield, 1);
-            workingCategories = makeAccessoryCategories(defenseKeyword);
+            workingCategories = makeAccessoryCategories(defenseKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EyeOfCthulhuPart>(), 100, ItemID.Binoculars, 1);
-            workingCategories = new List<string>() { utilityKeyword };
+            workingCategories = new List<string>() { utilityKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EyeOfCthulhuPart>(), 5, ItemID.CrimtaneOre, 100);
             working.addPart(ModContent.ItemType<CrimsonSurfacePart>(), 1);
-            workingCategories = makeMaterialCategories(oreMaterialKeyword);
+            workingCategories = makeMaterialCategories(oreMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, crimsonBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EyeOfCthulhuPart>(), 5, ItemID.DemoniteOre, 100);
             working.addPart(ModContent.ItemType<CorruptionSurfacePart>(), 1);
-            workingCategories = makeMaterialCategories(oreMaterialKeyword);
+            workingCategories = makeMaterialCategories(oreMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
@@ -1930,7 +1904,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<EyeOfCthulhuPart>(), 2000, ItemID.AviatorSunglasses, 1);
-            workingCategories = makeVanityCategories(armorHeadKeyword);
+            workingCategories = makeVanityCategories(armorHeadKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, eocKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
@@ -1947,58 +1921,58 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 200, ItemID.KingSlimeBossBag, 1);
-            workingCategories = new List<string>() { TreasureBagKeyword };
+            workingCategories = new List<string>() { TreasureBagKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 50, ItemID.KingSlimeTrophy, 1);
-            workingCategories = new List<string>() { TrophyKeyword };
+            workingCategories = new List<string>() { TrophyKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 50, ItemID.KingSlimeMask, 1);
-            workingCategories = new List<string>() { maskKeyword };
+            workingCategories = new List<string>() { maskKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 100, ItemID.RoyalGel, 1);
-            workingCategories = makeAccessoryCategories(otherKeyword);
+            workingCategories = makeAccessoryCategories(otherKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 20, ItemID.NinjaHood, 1);
-            workingCategories = makeVanityCategories(armorHeadKeyword);
+            workingCategories = makeVanityCategories(armorHeadKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 20, ItemID.NinjaShirt, 1);
-            workingCategories = makeVanityCategories(armorBodyKeyword);
+            workingCategories = makeVanityCategories(armorBodyKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 20, ItemID.NinjaPants, 1);
-            workingCategories = makeVanityCategories(armorLegsKeyword);
+            workingCategories = makeVanityCategories(armorLegsKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 20, ItemID.SlimySaddle, 1);
-            workingCategories = new List<string>() { mountKeyword };
+            workingCategories = new List<string>() { mountKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 20, ItemID.SlimeHook, 1);
-            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword };
+            workingCategories = new List<string>() { utilityKeyword + "/" + hooksKeyword }; working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 20, ItemID.SlimeGun, 1);
-            workingCategories = makeWeaponsCategories(trueDamageKeyword, gunWeaponKeyword);
+            workingCategories = makeWeaponsCategories(trueDamageKeyword, gunWeaponKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<KingSlimePart>(), 5, ItemID.Solidifier, 1);
-            workingCategories = makeFurnitureCategories(stationKeyword);
+            workingCategories = makeFurnitureCategories(stationKeyword); working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, KingSlimeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 

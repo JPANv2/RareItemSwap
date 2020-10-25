@@ -77,6 +77,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
                 ItemID.BejeweledValkyrieWing,
                 ItemID.LeinforsWings,
                 ItemID.LokisWings,
+                ItemID.JimsWings,
                 ItemID.RedsWings,
                 ItemID.SkiphsWings,
                 ItemID.WillsWings,
@@ -126,6 +127,16 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
             PartRecipes.addRecipe(working);
+
+            for (int i = 0; i < wings.Count; i++)
+            {
+                working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, wings[i], 1);
+                workingCategories = makeAccessoryCategories(movementKeyword, movementFlyingKeyword);
+                working.addCategoryAndSubcategories(workingCategories);
+                working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria"));
+                PartRecipes.addRecipe(working);
+            }
+
             for (int i = 0; i < accessories.Count; i++)
             {
                 working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, accessories[i], 1);
@@ -135,7 +146,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
                 PartRecipes.addRecipe(working);
             }
 
-            for (int i = 0; i < accessories.Count; i++)
+            for (int i = 0; i < dyes.Count; i++)
             {
                 working = PartRecipe.SimplePartRecipe(ModContent.ItemType<DeveloperPart>(), 1, dyes[i], 1);
                 workingCategories = makeVanityCategories(dyeKeyword);
@@ -1041,7 +1052,9 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
                 ItemID.Cloudfish,
                 ItemID.Clownfish,
                 ItemID.Cursedfish,
+                ItemID.Dirtfish,
                 ItemID.Derpfish,
+                ItemID.DemonicHellfish,
                 ItemID.DynamiteFish,
                 ItemID.EaterofPlankton,
                 ItemID.FallenStarfish,
@@ -1336,6 +1349,18 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             List<string> workingCategories;
 
             PartRecipe working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FishingPart>(), 1, ItemID.ArmoredCavefish, 2);
+            workingCategories = makeFishingCategories(fishKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+            
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FishingPart>(), 1, ItemID.Stinkfish, 2);
+            workingCategories = makeFishingCategories(fishKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<FishingPart>(), 20, ItemID.GoldenCarp, 1);
             workingCategories = makeFishingCategories(fishKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, purityBiomeKeyword));

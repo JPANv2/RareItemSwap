@@ -192,6 +192,12 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, hallowedBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<HallowedSurfacePart>(), 1, ItemID.UnicornHorn, 1);
+            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword);
+            working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, hallowedBiomeKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+
             working = PartRecipe.SimplePartRecipe(ModContent.ItemType<HallowedUndergroundPart>(), 1, ItemID.SoulofLight, 12);
             working.addPart(ModContent.ItemType<HardmodePart>(), 1);
             workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword);

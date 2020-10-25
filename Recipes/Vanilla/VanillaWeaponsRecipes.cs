@@ -285,7 +285,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, corruptionBiomeKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
 
-            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<HellSurfacePart>(), 30, ItemID.FlowerofFire, 1);
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<HellUndergroundPart>(), 30, ItemID.FlowerofFire, 1);
             workingCategories = makeWeaponsCategories(magicDamageKeyword, staffWeaponKeyword);
             working.addCategoryAndSubcategories(workingCategories);
             working.addCategoryAndSubcategories(makeByBiomeCategories(workingCategories, hellBiomeKeyword));

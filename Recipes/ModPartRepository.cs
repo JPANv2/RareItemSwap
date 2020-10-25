@@ -12,7 +12,7 @@ namespace ARareItemSwapJPANs.Recipes
 {
     public abstract class ModPartRepository
     {
-
+        #region keywords
         /*keywords*/
         public const string otherKeyword = "Other";
         /*equip slots*/
@@ -23,6 +23,7 @@ namespace ARareItemSwapJPANs.Recipes
         public const string armorLegsKeyword = "Legs";
         public const string armorSetKeyword = "Set";
         public const string dyeKeyword = "Dye";
+        public const string developerKeyword = "Developer";
 
         /*events*/
         public const string bloodMoonKeyword = "Blood Moon";
@@ -77,6 +78,7 @@ namespace ARareItemSwapJPANs.Recipes
         public const string flailWeaponKeyword = "Flail";
         public const string boomerangWeaponKeyword = "Boomerang";
         public const string yoyoWeaponKeyword = "Yo-yo";
+        public const string scytheWeaponKeyword = "Scythe";
         public const string pickaxeWeaponKeyword = "Pickaxe";
         public const string axeWeaponKeyword = "Axe";
         public const string hammerWeaponKeyword = "Hammer";
@@ -109,6 +111,7 @@ namespace ARareItemSwapJPANs.Recipes
         /*Utility*/
         public const string utilityKeyword = "Utility";
         public const string hooksKeyword = "Hooks";
+        public const string minecartKeyword = "Minecarts";
         /*Materials*/
         public const string materialKeyword = "Material";
         public const string gemsMaterialKeyword = "Gems";
@@ -209,7 +212,7 @@ namespace ARareItemSwapJPANs.Recipes
         public const string santaNK1Keyword = "Santa-NK1";
         public const string iceQueenKeyword = "Ice Queen";
         public const string martianSaucerKeyword = "Martian Saucer";
-
+#endregion
 
         public virtual List<int> getEventPartsDrops(NPC npc, Player p)
         {
@@ -472,6 +475,11 @@ namespace ARareItemSwapJPANs.Recipes
                 replies.Add("By Boss/" + bossName + "/" + c);
             }
             return replies;
+        }
+
+        public static List<PartRecipe> buildCommonShopRecipe(string tag, List<string> workingCategories, string shopKey, Func<bool> available = null)
+        {
+            return buildCommonShopRecipe(ARareItemSwapJPANs.getItemTypeFromTag(tag), workingCategories, shopKey, available);
         }
 
         public static List<PartRecipe> buildCommonShopRecipe(int ItemId, List<string> workingCategories, string shopKey, Func<bool> available = null)

@@ -17,7 +17,8 @@ namespace ARareItemSwapJPANs.Parts
         public override void AddRecipes()
         {
             base.AddRecipes();
-            PartsGlobalNPC.npcParts[bossID] = this;
+            if(bossID != 0)
+                PartsGlobalNPC.npcParts[bossID] = this;
         }
     }
 }

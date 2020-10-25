@@ -6,13 +6,20 @@ using ARareItemSwapJPANs.Common.Globals;
 using ARareItemSwapJPANs.Common.UI;
 using ARareItemSwapJPANs.Configs;
 using ARareItemSwapJPANs.Recipes;
+using ARareItemSwapJPANs.Recipes.ModLoader;
+using ARareItemSwapJPANs.Recipes.Thorium;
 using ARareItemSwapJPANs.Recipes.Vanilla;
+using Terraria.ObjectData;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.UI;
+using Terraria.Enums;
+using Terraria.GameContent.UI;
+using System.Reflection;
+using ARareItemSwapJPANs.Recipes.CalamityModMusic;
 
 namespace ARareItemSwapJPANs
 {
@@ -25,6 +32,8 @@ namespace ARareItemSwapJPANs
         public UserInterface purchaseUI;
 
         public PartExchangeUI ui;
+
+        public static bool TEST_MODE = false;
 
 		public ARareItemSwapJPANs()
 		{
@@ -110,7 +119,7 @@ namespace ARareItemSwapJPANs
             return res;
         }
 
-        public static int getTypeFromTag(string tag)
+        public static int getItemTypeFromTag(string tag)
         {
             int type = 0;
             if (!Int32.TryParse(tag, out type))
@@ -122,9 +131,36 @@ namespace ARareItemSwapJPANs
             return type;
         }
 
+        public static int getNPCTypeFromTag(string tag)
+        {
+            int type = 0;
+            if (!Int32.TryParse(tag, out type))
+            {
+                Mod m = ModLoader.GetMod(tag.Split(':')[0]);
+                if (m != null)
+                    type = m.NPCType(tag.Split(':')[1]);
+            }
+            return type;
+        }
+
         public override void AddRecipes()
         {
             PartsGlobalNPC.modpacks.Add(new VanillaModPartRepository());
+
+            if(ModLoader.GetMod("ModLoader") != null) //Should always be the case, as tMod is needed to run this
+            {
+                PartsGlobalNPC.modpacks.Add(new ModLoaderPartRepository());
+            }
+
+            if (ModLoader.GetMod("ThoriumMod") != null) 
+            {
+                PartsGlobalNPC.modpacks.Add(new ThoriumModPartRepository());
+            }
+            if (ModLoader.GetMod("CalamityModMusic") != null)
+            {
+                PartsGlobalNPC.modpacks.Add(new CalamityModMusicPartRepository()); ;
+            }
+            
 
             foreach (ModPartRepository mpr in PartsGlobalNPC.modpacks)
             {
@@ -136,12 +172,17 @@ namespace ARareItemSwapJPANs
         public override void PostAddRecipes()
         {
             addParts();
+            if (TEST_MODE)
+            {
+                makeItemTables();
+                makeNPCTables();
+            }
         }
 
         public static Item getItemFromTag(string tag, bool noMatCheck = false)
         {
             Item ret = new Item();
-            int type = getTypeFromTag(tag);
+            int type = getItemTypeFromTag(tag);
             if (type != 0)
                 ret.SetDefaults(type, noMatCheck);
             return ret;
@@ -223,5 +264,351 @@ namespace ARareItemSwapJPANs
             }
             return false;
         }
+
+        private void makeNPCTables()
+        {
+            string filename = "NPCs.txt";
+            string filename2 = "NPCs Full Info.txt";
+            string folder = Path.Combine(Main.SavePath, "Logs");
+            string path = Path.Combine(folder, filename);
+            string path2 = Path.Combine(folder, filename2);
+            FileStream f = File.OpenWrite(path);
+            FileStream fAll = File.OpenWrite(path2);
+
+            string modName = "Terraria";
+            string totalTablePart = modName + "\n";
+            string onlyModTagsPart = modName + "\n";
+            f.Write(onlyModTagsPart.ToByteArray(), 0, onlyModTagsPart.ToByteArray().Length);
+            fAll.Write(totalTablePart.ToByteArray(), 0, totalTablePart.ToByteArray().Length);
+            for (int i = 1; i < NPCLoader.NPCCount; i++)
+            {
+                NPC npc = new NPC();
+                try
+                {
+                    npc.SetDefaults(i);
+                    if (npc.modNPC != null && modName != npc.modNPC.mod.Name)
+                    {
+                        modName = npc.modNPC.mod.Name;
+                        totalTablePart = "\n\n" + modName + "\n\n";
+                        onlyModTagsPart = "\n\n" + modName + "\n\n";
+                        f.Write(onlyModTagsPart.ToByteArray(), 0, onlyModTagsPart.ToByteArray().Length);
+                        fAll.Write(totalTablePart.ToByteArray(), 0, totalTablePart.ToByteArray().Length);
+                    }
+                    onlyModTagsPart = "\"" + printNPCTag(npc) + "\",\n";
+                    totalTablePart = printNPCInfo(npc) + ",\n";
+                    f.Write(onlyModTagsPart.ToByteArray(), 0, onlyModTagsPart.ToByteArray().Length);
+                    fAll.Write(totalTablePart.ToByteArray(), 0, totalTablePart.ToByteArray().Length);
+                }
+                catch (Exception e) { }
+            }
+            Logger.Info("Done; Parsing " + NPCLoader.NPCCount + " npcs");
+
+            f.Close();
+            fAll.Close();
+        }
+
+        private void makeItemTables()
+        {
+            string filename = "Items.txt";
+            string filename2 = "Items Full Info.txt";
+            string folder = Path.Combine(Main.SavePath, "Logs");
+            string path = Path.Combine(folder, filename);
+            string path2 = Path.Combine(folder, filename2);
+            FileStream f = File.OpenWrite(path);
+            FileStream fAll = File.OpenWrite(path2);
+
+            List<Item> allItems = new List<Item>();
+
+            bool[] itemsCrafted = new bool[ItemLoader.ItemCount];
+
+            Logger.Info("Parsing " + Main.recipe.Length + " recipes");
+            foreach (Recipe r in Main.recipe)
+            {
+                if (r.createItem != null && r.createItem.type > 0)
+                    itemsCrafted[r.createItem.type] = true;
+            }
+            Logger.Info("Done; Parsing " + ItemLoader.ItemCount + " items");
+
+            foreach (PartRecipe pr in PartRecipes.allRecipes)
+            {
+                itemsCrafted[pr.result.type] = true;
+            }
+
+            for (int i = 1; i < ItemLoader.ItemCount; i++)
+            {
+                if (!itemsCrafted[i])
+                {
+                    Item itm = new Item();
+                    try
+                    {
+                        itm.SetDefaults(i);
+                        allItems.Add(itm);
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
+            Logger.Info("Done; Parsing " + allItems.Count + " uncraftable items");
+            string modName = "Terraria";
+            string newTag = "";
+
+            string totalTablePart = modName + "\n";
+            string onlyModTagsPart = modName + "\n";
+            f.Write(onlyModTagsPart.ToByteArray(), 0, onlyModTagsPart.ToByteArray().Length);
+            fAll.Write(totalTablePart.ToByteArray(), 0, totalTablePart.ToByteArray().Length);
+            foreach (Item itm in allItems)
+            {
+                newTag = printItemTag(itm);
+                if (itm.modItem != null)
+                {
+                    if (modName != itm.modItem.mod.Name)
+                    {
+                        //totalTable += totalTablePart;
+                        //onlyModTags += onlyModTagsPart;
+
+                        modName = itm.modItem.mod.Name;
+                        totalTablePart = "\n\n" + modName + "\n\n";
+                        onlyModTagsPart = "\n\n" + modName + "\n\n";
+                        f.Write(onlyModTagsPart.ToByteArray(), 0, onlyModTagsPart.ToByteArray().Length);
+                        fAll.Write(totalTablePart.ToByteArray(), 0, totalTablePart.ToByteArray().Length);
+                    }
+                }
+                onlyModTagsPart = "\"" + printItemTag(itm) + "\",\n";
+                totalTablePart = printItemInfo(itm) + ",\n";
+                f.Write(onlyModTagsPart.ToByteArray(), 0, onlyModTagsPart.ToByteArray().Length);
+                fAll.Write(totalTablePart.ToByteArray(), 0, totalTablePart.ToByteArray().Length);
+            }
+
+            f.Close();
+            fAll.Close();
+        }
+
+        private string printItemTag(Item itm)
+        {
+            if (itm.modItem == null)
+                return "" + itm.type;
+            return itm.modItem.mod.Name + ":" + itm.modItem.Name;
+        }
+
+        private string printItemInfo(Item itm)
+        {
+            string ans = printItemTag(itm) + "\t";
+            ans += "Name: " + itm.Name + "\t";
+            ans += "Estimate Category: " + placeCategory(itm) + "\t";
+            return ans;
+        }
+
+        private string printNPCTag(NPC itm)
+        {
+            if (itm.modNPC == null)
+                return "" + itm.type;
+            return itm.modNPC.mod.Name + ":" + itm.modNPC.Name;
+        }
+
+        private string printNPCInfo(NPC itm)
+        {
+            string ans = printNPCTag(itm) + "\t";
+            ans += "Name: " + itm.TypeName + "\t";
+            ans += "IsBoss: " + itm.boss + "\t";
+            return ans;
+        }
+
+        private string placeCategory(Item test)
+        {
+            if (test.maxStack == 1)
+            {
+
+                if (test.damage > 0)
+                {
+                    if (test.melee)
+                    {
+                        return "Weapons/Melee";
+                    }
+                    else if (test.ranged)
+                    {
+                        return "Weapons/Ranged";
+                    }
+                    else if (test.magic)
+                    {
+                        return "Weapons/Magic";
+                    }
+                    else if (test.thrown)
+                    {
+                        return "Weapons/Thrown";
+                    }
+                    else if (test.summon)
+                    {
+                        return "Weapons/Summoner";
+                    }
+                    else
+                    {
+                        return "Weapons/Other";
+                    }
+                }
+                else if (test.vanity)
+                {
+                    if (test.accessory)
+                    {
+                        if (test.backSlot > 0 || test.wingSlot > 0)
+                        {
+                            return "Vanity/Accessories/Wings and Capes";
+                        }
+                        else
+                        {
+                            return "Vanity/Accessories";
+                        }
+                    }
+                    else if (test.headSlot > 0)
+                    {
+                        return "Vanity/Armor/Head";
+                    }
+                    else if (test.bodySlot > 0)
+                    {
+                        return "Vanity/Armor/Body";
+
+                    }
+                    else if (test.legSlot > 0)
+                    {
+                        return "Vanity/Armor/Legs";
+
+                    }
+                    else if (test.mountType > 0)
+                    {
+                        return "Vanity/Mounts";
+                    }
+                    else
+                    {
+                        return "Vanity";
+                    }
+                }
+                else if (test.accessory)
+                {
+
+                    if (test.backSlot > 0 || test.wingSlot > 0)
+                    {
+                        return "Accessories/Wings and Capes";
+                    }
+                    else
+                    {
+                        return "Accessories";
+                    }
+
+                }
+                else if (test.headSlot > 0)
+                {
+                    return "Armor/Head";
+
+                }
+                else if (test.bodySlot > 0)
+                {
+                    return "Armor/Body";
+
+                }
+                else if (test.legSlot > 0)
+                {
+                    return "Armor/Legs";
+                }
+                else if (test.mountType > 0)
+                {
+                    if (MountID.Sets.Cart[test.mountType])
+                    {
+                        return "Minecarts";
+                    }
+                    else
+                    {
+                        return "Mounts";
+                    }
+
+                }
+                else if (Main.projHook[test.shoot])
+                {
+                    return "Hooks";
+                }
+                else if (test.buffType > 0 && Main.vanityPet[test.buffType] && !Main.lightPet[test.buffType])
+                {
+                    return "Pets/Normal Pets";
+                }
+                else if (test.buffType > 0 && Main.lightPet[test.buffType])
+                {
+                    return "Pets/Light Pets";
+                }
+            }
+            else if (test.rare == -11)
+            {
+
+                return "Quest Items";
+            }
+            else if ((test.type >= ItemID.CopperCoin && test.type <= ItemID.PlatinumCoin) || isCustomCurrency(test))
+            {
+                return "Currency";
+            }
+            else if (test.createWall >= 0)
+            {
+                return "Walls";
+            }
+            else if (test.createTile >= 0)
+            {
+
+                TileObjectData placer = TileObjectData.GetTileData(test.createTile, test.placeStyle, 0);
+                if (placer != null && (placer.Width > 1 || placer.Height > 1))
+                {
+                    if (test.Name.EndsWith(" Crate"))
+                    {
+                        return "Crates";
+                    }
+                    else
+                    {
+                        return "Furniture";
+                    }
+                }
+                else if (placer != null && placer.AnchorBottom != null && placer.AnchorBottom.type == AnchorType.Table)
+                {
+                    return "Furniture";
+                }
+                else if (TileID.Sets.Platforms[test.createTile])
+                {
+                    return "Platforms";
+                }
+                else
+                {
+
+                    return "Tiles";
+                }
+            }
+            else
+            {
+                if (test.consumable)
+                {
+                    return "Consumable? ";
+                }
+                if (test.material)
+                {
+                    return "Materials?";
+                }
+
+            }
+            return "N/A";
+        }
+        private static bool isCustomCurrency(Item test)
+        {
+            if (test.type == ItemID.DefenderMedal)
+                return true;
+            Type type = typeof(CustomCurrencyManager);
+            FieldInfo info = type.GetField("_currencies", BindingFlags.NonPublic | BindingFlags.Static);
+            object value = info.GetValue(null);
+            Dictionary<int, CustomCurrencySystem> currencies = value as Dictionary<int, CustomCurrencySystem>;
+            if (currencies != null)
+            {
+                foreach (CustomCurrencySystem ccs in currencies.Values)
+                {
+                    if (ccs.Accepts(test))
+                        return true;
+                }
+            }
+            return false;
+        }
     }
 }
+

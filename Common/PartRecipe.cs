@@ -47,6 +47,11 @@ namespace ARareItemSwapJPANs.Common
             this.parts = new List<Item>();
         }
 
+        public static PartRecipe SimplePartRecipe(int partID, int partAmount, string resultID, int resultAmount = 1) {
+
+            return SimplePartRecipe(partID, partAmount, ARareItemSwapJPANs.getItemTypeFromTag(resultID), resultAmount);
+        }
+
         public static PartRecipe SimplePartRecipe(int partID, int partAmount, int resultID, int resultAmount = 1)
         {
             PartRecipe ans = new PartRecipe();

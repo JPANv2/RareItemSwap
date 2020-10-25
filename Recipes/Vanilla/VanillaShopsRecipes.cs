@@ -538,7 +538,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             recipes.AddRange(buildCommonShopRecipe(ItemID.FlintlockPistol, makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword), ArmsDealerKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.Minishark, makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword), ArmsDealerKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.IllegalGunParts, makeMaterialCategories(otherKeyword), ArmsDealerKeyword));
-            recipes.AddRange(buildCommonShopRecipe(ItemID.Boomstick, makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword), ArmsDealerKeyword, ()=>Main.hardMode));
+            recipes.AddRange(buildCommonShopRecipe(ItemID.Shotgun, makeWeaponsCategories(rangedDamageKeyword, gunWeaponKeyword), ArmsDealerKeyword, ()=>Main.hardMode));
             recipes.AddRange(buildCommonShopRecipe(ItemID.EmptyBullet, makeMaterialCategories(otherKeyword), ArmsDealerKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.NurseHat, makeVanityCategories(armorHeadKeyword), ArmsDealerKeyword, () => !ModContent.GetInstance<Config>().forceSeasonal || Main.halloween));
             recipes.AddRange(buildCommonShopRecipe(ItemID.NurseShirt, makeVanityCategories(armorBodyKeyword), ArmsDealerKeyword, () => !ModContent.GetInstance<Config>().forceSeasonal || Main.halloween));
@@ -615,6 +615,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             recipes.AddRange(buildCommonShopRecipe(ItemID.PiggyBank, makeFurnitureCategories(chestKeyword), MerchantKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.IronAnvil, makeFurnitureCategories(stationKeyword), MerchantKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.BugNet, new List<string>() { utilityKeyword }, MerchantKeyword));
+            recipes.AddRange(buildCommonShopRecipe(ItemID.Sickle, new List<string>() { utilityKeyword }, MerchantKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.Torch, makeFurnitureCategories(lightSourceKeyword), MerchantKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.LesserHealingPotion, new List<string>() { potionKeyword }, MerchantKeyword));
             recipes.AddRange(buildCommonShopRecipe(ItemID.LesserManaPotion, new List<string>() { potionKeyword }, MerchantKeyword));
