@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -131,6 +132,20 @@ namespace ARareItemSwapJPANs.Common.Globals
                 }
             }
             return base.OnPickup(item, player);
+        }
+
+        public override bool PreDrawTooltip(Item item, ReadOnlyCollection<TooltipLine> lines, ref int x, ref int y)
+        {
+            if (((ARareItemSwapJPANs)mod).ui.recipes.tooltipSearch && ((ARareItemSwapJPANs)mod).ui.recipes.isSearching)
+            {
+                ((ARareItemSwapJPANs)mod).ui.recipes.mouseTooltip = "";
+                foreach (TooltipLine line in lines)
+                {
+                    ((ARareItemSwapJPANs)mod).ui.recipes.mouseTooltip += line.text + "\n";
+                }
+                return false;
+            }
+            return base.PreDrawTooltip(item, lines, ref x, ref y);
         }
     }
 }

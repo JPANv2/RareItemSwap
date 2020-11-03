@@ -32,7 +32,9 @@ namespace ARareItemSwapJPANs.Common.UI
         UIText loading = new UIText("Loading...");
         Task t = null;
         string search = "";
-        bool tooltipSearch = false;
+        public string mouseTooltip = "";
+        public bool tooltipSearch = false;
+        public bool isSearching = false;
 
         public bool invalidatedList = false;
         public bool changedToList = false;
@@ -189,7 +191,7 @@ namespace ARareItemSwapJPANs.Common.UI
 
                 foreach (PartRecipe pr in prtList)
                 {
-                    if (search == null || search.Length == 0 || pr.result.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(pr.result).ToLower().Contains(search.ToLower())))
+                    if (search == null || search.Trim().Length == 0 || pr.result.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(pr.result).ToLower().Contains(search.ToLower())))
                     {
                         PurchaseItemSlot pt = new PurchaseItemSlot(pr);
                         internalGrid.Add(pt);
@@ -210,7 +212,7 @@ namespace ARareItemSwapJPANs.Common.UI
                 {
                     if (pr.isAvailable())
                     {
-                        if (search == null || search.Length == 0 || pr.result.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(pr.result).ToLower().Contains(search.ToLower())))
+                        if (search == null || search.Trim().Length == 0 || pr.result.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(pr.result).ToLower().Contains(search.ToLower())))
                         {
                             PurchaseItemSlot pt = new PurchaseItemSlot(pr);
                             internalGrid.Add(pt);
@@ -229,7 +231,7 @@ namespace ARareItemSwapJPANs.Common.UI
                     if (prt.parts.ContainsKey(s))
                     {
                         Item part = ARareItemSwapJPANs.getItemFromTag(s);
-                        if (search == null || search.Length == 0 || part.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(part).ToLower().Contains(search.ToLower())))
+                        if (search == null || search.Trim().Length == 0 || part.Name.ToLower().Contains(search.ToLower()) || (tooltipSearch && condensedTooltip(part).ToLower().Contains(search.ToLower())))
                         {
                             PartItemSlot pt = new PartItemSlot(s, -1);
                             internalGrid.Add(pt);
@@ -265,14 +267,14 @@ namespace ARareItemSwapJPANs.Common.UI
         }
         private string condensedTooltip(Item item)
         {
-            String s = "";
-            item.RebuildTooltip();
-            for (int i = 0; i < item.ToolTip.Lines; i++)
-            {
-                s += item.ToolTip.GetLine(i);
-                s += "\n";
-            }
-            return s;
+            mouseTooltip = "";
+            isSearching = true;
+            Item mouse = Main.HoverItem;
+            Main.HoverItem = item;
+            Main.instance.MouseText("");
+            Main.HoverItem = mouse;
+            isSearching = false;
+            return mouseTooltip;
         }
     }
 
