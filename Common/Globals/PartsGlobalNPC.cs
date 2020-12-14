@@ -16,7 +16,7 @@ namespace ARareItemSwapJPANs.Common.Globals
 {
     public class PartsGlobalNPC: GlobalNPC
     {
-        public static Dictionary<int, ItemPart> npcParts = new Dictionary<int, ItemPart>();
+        public static Dictionary<int, List<Item>> npcParts = new Dictionary<int, List<Item>>();
         public static List<ModPartRepository> modpacks = new List<ModPartRepository>();
         public override void NPCLoot(Terraria.NPC npc)
         {
@@ -78,7 +78,7 @@ namespace ARareItemSwapJPANs.Common.Globals
             List<int> parts = new List<int>();
             foreach (ModPartRepository mpr in modpacks)
             {
-                foreach(int i in mpr.getBiomePartsDrops(npc,p))
+                foreach(int i in mpr.getBiomePartsDrops(npc,p, parts))
                 {
                     if (!parts.Contains(i))
                         parts.Add(i);
@@ -103,7 +103,7 @@ namespace ARareItemSwapJPANs.Common.Globals
             List<int> parts = new List<int>();
             foreach (ModPartRepository mpr in modpacks)
             {
-                foreach (int i in mpr.getEventPartsDrops(npc, p))
+                foreach (int i in mpr.getEventPartsDrops(npc, p, parts))
                 {
                     if (!parts.Contains(i))
                         parts.Add(i);
@@ -128,7 +128,7 @@ namespace ARareItemSwapJPANs.Common.Globals
             List<int> parts = new List<int>();
             foreach (ModPartRepository mpr in modpacks)
             {
-                foreach (int i in mpr.getWeatherPartsDrops(npc, p))
+                foreach (int i in mpr.getWeatherPartsDrops(npc, p, parts))
                 {
                     if (!parts.Contains(i))
                         parts.Add(i);
@@ -153,7 +153,7 @@ namespace ARareItemSwapJPANs.Common.Globals
             List<int> parts = new List<int>();
             foreach (ModPartRepository mpr in modpacks)
             {
-                foreach (int i in mpr.getStagePartsDrops(npc, p))
+                foreach (int i in mpr.getStagePartsDrops(npc, p, parts))
                 {
                     if (!parts.Contains(i))
                         parts.Add(i);
@@ -175,15 +175,28 @@ namespace ARareItemSwapJPANs.Common.Globals
         {
             if (npcParts.ContainsKey(npc.type))
             {
-                if (npc.boss ||
-                  (npc.type != 13 && npc.type != 14 && npc.type != 15)) {
-                    Config c = ModContent.GetInstance<Config>();
-                int parts = c.minNumOfBossParts + Main.rand.Next(c.randNumOfBossParts + 1);
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, npcParts[npc.type].item.type, parts, false, 0, false, false);
+                foreach(Item part in npcParts[npc.type]) {
+                    if (npc.boss ||
+                      (npc.type != 13 && npc.type != 14 && npc.type != 15))
+                    {
+                        Config c = ModContent.GetInstance<Config>();
+                        int parts = c.minNumOfBossParts + Main.rand.Next(c.randNumOfBossParts + 1);
+                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, part.type, parts, false, 0, false, false);
+                    }
                 }
             }
         }
 
+        public static void addPartToNPC(int npcType, Item part)
+        {
+            if (!npcParts.ContainsKey(npcType))
+                npcParts[npcType] = new List<Item>();
+            npcParts[npcType].Add(part);
+        }
 
+        public static void addPartToNPC(int npcType, ItemPart part)
+        {
+            addPartToNPC(npcType, part.item);
+        }
     }
 }

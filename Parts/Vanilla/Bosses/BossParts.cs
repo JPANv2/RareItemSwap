@@ -43,7 +43,7 @@ namespace ARareItemSwapJPANs.Parts.Vanilla.Bosses
         public override void AddRecipes()
         {
             base.AddRecipes();
-            PartsGlobalNPC.npcParts[NPCID.DD2DarkMageT3] = this;
+            PartsGlobalNPC.addPartToNPC(NPCID.DD2DarkMageT3,this);
         }
     }
 
@@ -63,7 +63,7 @@ namespace ARareItemSwapJPANs.Parts.Vanilla.Bosses
         {
             base.bossID = NPCID.DungeonGuardian;
             base.worldDisplay = "ARareItemSwapJPANs/Parts/Vanilla/Bosses/DungeonGuardianPart_World";
-            base.DisplayName.SetDefault("Everscream Part");
+            base.DisplayName.SetDefault("Dungeon Guardian Part");
             base.Tooltip.SetDefault("Reward for defeating a Dungeon Guardian. Congratulations! Swap a bunch for its drops.");
         }
     }
@@ -82,8 +82,8 @@ namespace ARareItemSwapJPANs.Parts.Vanilla.Bosses
         public override void AddRecipes()
         {
             base.AddRecipes();
-            PartsGlobalNPC.npcParts[NPCID.EaterofWorldsBody] = this;
-            PartsGlobalNPC.npcParts[NPCID.EaterofWorldsTail] = this;
+            PartsGlobalNPC.addPartToNPC(NPCID.EaterofWorldsBody,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.EaterofWorldsTail,this);
         }
     }
     public class EverscreamPart : BossPart
@@ -218,7 +218,7 @@ namespace ARareItemSwapJPANs.Parts.Vanilla.Bosses
         public override void AddRecipes()
         {
             base.AddRecipes();
-            PartsGlobalNPC.npcParts[NPCID.DD2OgreT3] = this;
+            PartsGlobalNPC.addPartToNPC(NPCID.DD2OgreT3,this);
         }
     }
 
@@ -266,32 +266,32 @@ namespace ARareItemSwapJPANs.Parts.Vanilla.Bosses
         public override void AddRecipes()
         {
             base.AddRecipes();
-            PartsGlobalNPC.npcParts[NPCID.WyvernHead] = this;
-            PartsGlobalNPC.npcParts[NPCID.BoneLee] = this;
-            PartsGlobalNPC.npcParts[NPCID.DungeonSlime] = this;
-            PartsGlobalNPC.npcParts[NPCID.GoblinScout] = this;
-            PartsGlobalNPC.npcParts[NPCID.LostGirl] = this;
-            PartsGlobalNPC.npcParts[NPCID.Nymph] = this;
-            PartsGlobalNPC.npcParts[NPCID.Paladin] = this;
-            PartsGlobalNPC.npcParts[NPCID.Pinky] = this;
-            PartsGlobalNPC.npcParts[NPCID.RainbowSlime] = this;
-            PartsGlobalNPC.npcParts[NPCID.DoctorBones] = this;
-            PartsGlobalNPC.npcParts[NPCID.IceGolem] = this;
-            PartsGlobalNPC.npcParts[NPCID.SandElemental] = this;
-            PartsGlobalNPC.npcParts[NPCID.Moth] = this;
-            PartsGlobalNPC.npcParts[NPCID.RuneWizard] = this;
-            PartsGlobalNPC.npcParts[NPCID.SkeletonCommando] = this;
-            PartsGlobalNPC.npcParts[NPCID.SkeletonSniper] = this;
-            PartsGlobalNPC.npcParts[NPCID.TacticalSkeleton] = this;
-            PartsGlobalNPC.npcParts[NPCID.TheBride] = this;
-            PartsGlobalNPC.npcParts[NPCID.TheGroom] = this;
-            PartsGlobalNPC.npcParts[NPCID.Tim] = this;
-            PartsGlobalNPC.npcParts[NPCID.UndeadMiner] = this;
-            PartsGlobalNPC.npcParts[NPCID.DiabolistRed] = this;
-            PartsGlobalNPC.npcParts[NPCID.RaggedCaster] = this;
-            PartsGlobalNPC.npcParts[NPCID.RaggedCasterOpenCoat] = this;
-            PartsGlobalNPC.npcParts[NPCID.Necromancer] = this;
-            PartsGlobalNPC.npcParts[NPCID.NecromancerArmored] = this;
+            PartsGlobalNPC.addPartToNPC(NPCID.WyvernHead, this);
+            PartsGlobalNPC.addPartToNPC(NPCID.BoneLee,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.DungeonSlime,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.GoblinScout,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.LostGirl,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.Nymph,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.Paladin,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.Pinky,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.RainbowSlime,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.DoctorBones,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.IceGolem,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.SandElemental,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.Moth,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.RuneWizard,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.SkeletonCommando,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.SkeletonSniper,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.TacticalSkeleton,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.TheBride,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.TheGroom,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.Tim,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.UndeadMiner,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.DiabolistRed,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.RaggedCaster,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.RaggedCasterOpenCoat,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.Necromancer,this);
+            PartsGlobalNPC.addPartToNPC(NPCID.NecromancerArmored,this);
         }
     }
 
@@ -351,7 +351,7 @@ namespace ARareItemSwapJPANs.Parts.Vanilla.Bosses
         public override void AddRecipes()
         {
             base.AddRecipes();
-            PartsGlobalNPC.npcParts[NPCID.Retinazer] = this;
+            PartsGlobalNPC.addPartToNPC(NPCID.Retinazer,this);
         }
     }
 

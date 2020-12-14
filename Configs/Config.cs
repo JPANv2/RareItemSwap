@@ -76,11 +76,16 @@ namespace ARareItemSwapJPANs.Configs
         [ReloadRequired]
         public bool forceSeasonal;
 
-       /* [Label("Part Exchanger goes first")]
-        [Tooltip("The Part Exchanger turns all picked up items into Parts if equipped as an accessory, or so it should. The problem is if a mod's ItemSpace function returns true, it will never run. This will make it the first Global item in modloader, so it always works.")]
-        [DefaultValue(true)]
-        [ReloadRequired]
-        public bool forcePickup;*/
+        [Label("Research mod Compatibility - Infinite Parts on Shop")]
+        [Tooltip("By turning this on, if you have a part researched on your inventory, as soon as you pick one up you will have max of that part.")]
+        [DefaultValue(false)]
+        public bool researchCompatInfPart;
+
+        /* [Label("Part Exchanger goes first")]
+         [Tooltip("The Part Exchanger turns all picked up items into Parts if equipped as an accessory, or so it should. The problem is if a mod's ItemSpace function returns true, it will never run. This will make it the first Global item in modloader, so it always works.")]
+         [DefaultValue(true)]
+         [ReloadRequired]
+         public bool forcePickup;*/
 
     }
 }

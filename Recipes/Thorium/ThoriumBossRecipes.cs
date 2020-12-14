@@ -894,18 +894,18 @@ namespace ARareItemSwapJPANs.Recipes.Thorium
         private void makeRareEnemyRecipes()
         {
             RareEnemyPart rare = ModContent.GetModItem(ModContent.ItemType<RareEnemyPart>()) as RareEnemyPart;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:CoinBagCopper")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:CoinBagSilver")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:CoinBagGold")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:FlamekinCaster")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:Globee")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:Illusionist")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:LifeCrystalMimic")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:RagingMinotaur")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:GildedBat")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:GildedLycan")] = rare;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:GildedSlime")] = rare;
-            PartsGlobalNPC.npcParts[NPCID.WyvernHead] = rare;
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:CoinBagCopper"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:CoinBagSilver"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:CoinBagGold"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:FlamekinCaster"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:Globee"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:Illusionist"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:LifeCrystalMimic"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:RagingMinotaur"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:GildedBat"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:GildedLycan"),rare);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:GildedSlime"),rare);
+            PartsGlobalNPC.addPartToNPC(NPCID.WyvernHead,rare);
 
             makeMimicRecipes();
             List<PartRecipe> recipes = new List<PartRecipe>();
@@ -1024,18 +1024,18 @@ namespace ARareItemSwapJPANs.Recipes.Thorium
         private void makeMimicRecipes()
         {
             MimicPart mimic = ModContent.GetModItem(ModContent.ItemType<MimicPart>()) as MimicPart;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:LihzardMimic")] = mimic;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:LihzardPotMimic1")] = mimic;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:LihzardPotMimic2")] = mimic;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:NecroPot")] = mimic;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:UnderworldPotMimic1")] = mimic;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:UnderworldPotMimic2")] = mimic;
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:LihzardMimic"),mimic);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:LihzardPotMimic1"),mimic);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:LihzardPotMimic2"),mimic);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:NecroPot"),mimic);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:UnderworldPotMimic1"),mimic);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:UnderworldPotMimic2"),mimic);
 
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:DesertBoulderMimic")] = mimic;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:IceBoulderMimic")] = mimic;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:JungleBoulderMimic")] = mimic;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:MoltenBoulderMimic")] = mimic;
-            PartsGlobalNPC.npcParts[ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:RockBoulderMimic")] = mimic;
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:DesertBoulderMimic"),mimic);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:IceBoulderMimic"),mimic);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:JungleBoulderMimic"),mimic);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:MoltenBoulderMimic"),mimic);
+            PartsGlobalNPC.addPartToNPC(ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:RockBoulderMimic"),mimic);
 
 
             List <PartRecipe> recipes = new List<PartRecipe>();

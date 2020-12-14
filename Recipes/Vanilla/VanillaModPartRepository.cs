@@ -520,7 +520,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             }
         }
 
-        public override List<int> getEventPartsDrops(NPC npc, Player p)
+        public override List<int> getEventPartsDrops(NPC npc, Player p, List<int> orgParts = null)
         {
             //Config c = ModContent.GetInstance<Config>();
             List<int> parts = new List<int>();
@@ -552,17 +552,25 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             return parts;
         }
 
-        public override List<int> getBiomePartsDrops(NPC npc, Player p)
+        public override List<int> getBiomePartsDrops(NPC npc, Player p, List<int> orgParts = null)
         {
             List<int> parts = new List<int>();
             PartsPlayer plr = p.GetModPlayer<PartsPlayer>();
-            
+            bool notPurity = false;
             if (p.ZoneSkyHeight)
+            {
+                notPurity = true;
                 parts.Add(ModContent.ItemType<SkySurfacePart>());
-            if(p.ZoneUnderworldHeight)
+            }
+            if (p.ZoneUnderworldHeight)
+            {
+                notPurity = true;
                 parts.Add(ModContent.ItemType<HellUndergroundPart>());
+            }
+                
             if (plr.ZoneGranite)
             {
+                notPurity = true;
                 if (p.ZoneSkyHeight || p.ZoneOverworldHeight)
                     parts.Add(ModContent.ItemType<GraniteSurfacePart>());
                 else if (p.ZoneDirtLayerHeight)
@@ -575,6 +583,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             }
             if (plr.ZoneMarble)
             {
+                notPurity = true;
                 if (p.ZoneSkyHeight || p.ZoneOverworldHeight)
                     parts.Add(ModContent.ItemType<MarbleSurfacePart>());
                 else if (p.ZoneDirtLayerHeight)
@@ -587,6 +596,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             }
             if (plr.ZoneSpiderCave)
             {
+                notPurity = true;
                 if (p.ZoneSkyHeight || p.ZoneOverworldHeight)
                     parts.Add(ModContent.ItemType<SpiderCaveSurfacePart>());
                 else if (p.ZoneDirtLayerHeight)
@@ -597,7 +607,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
                 else
                     parts.Add(ModContent.ItemType<SpiderCaveUndergroundPart>());
             }
-            bool notPurity = false;
+           
             if (p.ZoneCorrupt)
             {
                 notPurity = true;
@@ -675,6 +685,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
 
             if (p.ZoneMeteor)
             {
+                notPurity = true;
                 if (p.ZoneSkyHeight || p.ZoneOverworldHeight)
                     parts.Add(ModContent.ItemType<MeteoriteSurfacePart>());
                 else if (p.ZoneDirtLayerHeight)
@@ -700,6 +711,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             }
             if (p.ZoneBeach)
             {
+                notPurity = true;
                 if (p.ZoneSkyHeight || p.ZoneOverworldHeight)
                     parts.Add(ModContent.ItemType<OceanSurfacePart>());
                 else if (p.ZoneDirtLayerHeight)
@@ -741,10 +753,10 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             return parts;
         }
 
-        public override List<int> getWeatherPartsDrops(NPC npc, Player p)
+        public override List<int> getWeatherPartsDrops(NPC npc, Player p, List<int> orgParts = null)
         {
             List<int> parts = new List<int>();
-            if (Main.raining && !p.ZoneDesert && !p.ZoneDirtLayerHeight && !p.ZoneRockLayerHeight && !p.ZoneUnderworldHeight)
+            if (Main.raining && !p.ZoneDirtLayerHeight && !p.ZoneRockLayerHeight && !p.ZoneUnderworldHeight)
                 parts.Add(ModContent.ItemType<RainPart>());
             if((p.ZoneDesert || p.ZoneUndergroundDesert) && Sandstorm.Happening)
                 parts.Add(ModContent.ItemType<SandstormPart>());
@@ -752,7 +764,7 @@ namespace ARareItemSwapJPANs.Recipes.Vanilla
             return parts;
         }
 
-        public override List<int> getStagePartsDrops(NPC npc, Player p)
+        public override List<int> getStagePartsDrops(NPC npc, Player p, List<int> orgParts = null)
         {
             List<int> parts = new List<int>();
             if (Main.hardMode)

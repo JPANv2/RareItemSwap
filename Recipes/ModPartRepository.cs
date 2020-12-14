@@ -214,22 +214,22 @@ namespace ARareItemSwapJPANs.Recipes
         public const string martianSaucerKeyword = "Martian Saucer";
 #endregion
 
-        public virtual List<int> getEventPartsDrops(NPC npc, Player p)
+        public virtual List<int> getEventPartsDrops(NPC npc, Player p, List<int> listSoFar = null)
         {
             return new List<int>();
         }
 
-        public virtual List<int> getBiomePartsDrops(NPC npc, Player p)
+        public virtual List<int> getBiomePartsDrops(NPC npc, Player p, List<int> listSoFar = null)
         {
             return new List<int>();
         }
 
-        public virtual List<int> getWeatherPartsDrops(NPC npc, Player p)
+        public virtual List<int> getWeatherPartsDrops(NPC npc, Player p, List<int> listSoFar = null)
         {
             return new List<int>();
         }
 
-        public virtual List<int> getStagePartsDrops(NPC npc, Player p)
+        public virtual List<int> getStagePartsDrops(NPC npc, Player p, List<int> listSoFar = null)
         {
             return new List<int>();
         }
@@ -564,7 +564,67 @@ namespace ARareItemSwapJPANs.Recipes
             return recipes;
         }
 
+        public static PartRecipe makeSimpleBossPartRecipe(String mod, string boss, String itemTag, int partId, int amount, List<string> categories, Func<bool> available = null)
+        {
+            PartRecipe working = PartRecipe.SimplePartRecipe(partId, amount, ARareItemSwapJPANs.getItemTypeFromTag(itemTag), 1);
+            if (available != null)
+                working.setAvailableFunction(available);
+            working.addCategoryAndSubcategories(categories);
+            working.addCategoryAndSubcategories(makeByBossCategories(categories, boss));
+            working.addCategoryAndSubcategories(makeByModCategories(categories, mod));
+            return working;
+        }
 
-        
+        public static PartRecipe makeSimpleBossPartRecipe(String mod, string boss, String itemTag, int amountItem,  int partId, int amountPart, List<string> categories, Func<bool> available = null)
+        {
+            PartRecipe working = PartRecipe.SimplePartRecipe(partId, amountPart, ARareItemSwapJPANs.getItemTypeFromTag(itemTag), amountItem);
+            if (available != null)
+                working.setAvailableFunction(available);
+            working.addCategoryAndSubcategories(categories);
+            working.addCategoryAndSubcategories(makeByBossCategories(categories, boss));
+            working.addCategoryAndSubcategories(makeByModCategories(categories, mod));
+            return working;
+        }
+
+        public static PartRecipe makeSimpleBossPartRecipe(String mod, string boss, String itemTag, int amountItem, List<int> partsAndAmounts, List<string> categories, Func<bool> available = null)
+        {
+            if (partsAndAmounts == null || partsAndAmounts.Count < 2 || ((partsAndAmounts.Count & 1) == 1))
+                throw new ArgumentException("partsAndAmmounts must be non-null, non-empty, and contain an even number of contents ((partID, AmmountOfPart) pairs).");
+            PartRecipe working = PartRecipe.SimplePartRecipe(partsAndAmounts[0], partsAndAmounts[1], ARareItemSwapJPANs.getItemTypeFromTag(itemTag), amountItem);
+            for(int i = 2; i < partsAndAmounts.Count; i++)
+            {
+                working.addPart(partsAndAmounts[i], partsAndAmounts[i + 1]);
+                i++;
+            }
+            if (available != null)
+                working.setAvailableFunction(available);
+            working.addCategoryAndSubcategories(categories);
+            working.addCategoryAndSubcategories(makeByBossCategories(categories, boss));
+            working.addCategoryAndSubcategories(makeByModCategories(categories, mod));
+            return working;
+        }
+
+        public static PartRecipe makeSimpleBiomePartRecipe(String mod, string biome, String itemTag, int amountItem, int partId, int amountPart, List<string> categories, Func<bool> available = null)
+        {
+            PartRecipe working = PartRecipe.SimplePartRecipe(partId, amountPart, ARareItemSwapJPANs.getItemTypeFromTag(itemTag), amountItem);
+            if (available != null)
+                working.setAvailableFunction(available);
+            working.addCategoryAndSubcategories(categories);
+            working.addCategoryAndSubcategories(makeByBiomeCategories(categories, biome));
+            working.addCategoryAndSubcategories(makeByModCategories(categories, mod));
+            return working;
+        }
+
+        public static PartRecipe makeSimpleEventPartRecipe(String mod, string biome, String itemTag, int amountItem, int partId, int amountPart, List<string> categories, Func<bool> available = null)
+        {
+            PartRecipe working = PartRecipe.SimplePartRecipe(partId, amountPart, ARareItemSwapJPANs.getItemTypeFromTag(itemTag), amountItem);
+            if (available != null)
+                working.setAvailableFunction(available);
+            working.addCategoryAndSubcategories(categories);
+            working.addCategoryAndSubcategories(makeByEventCategories(categories, biome));
+            working.addCategoryAndSubcategories(makeByModCategories(categories, mod));
+            return working;
+        }
+
     }
 }

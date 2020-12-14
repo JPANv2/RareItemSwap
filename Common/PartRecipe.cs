@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ModLoader;
 
 namespace ARareItemSwapJPANs.Common
 {
@@ -148,6 +149,12 @@ namespace ARareItemSwapJPANs.Common
             }
 
             return this;
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = this.result.type + (this.result.stack << 0x10);
+            return hash;
         }
 
         public override bool Equals(object obj)
@@ -323,7 +330,8 @@ namespace ARareItemSwapJPANs.Common
         public static void addRecipe(PartRecipe recipe)
         {
             bool added = false;
-
+            if (recipe.result.IsAir)
+                return;
             if (!recipesByResult.ContainsKey(ARareItemSwapJPANs.ItemToTag(recipe.result)))
             {
                 recipesByResult[ARareItemSwapJPANs.ItemToTag(recipe.result)] = new List<PartRecipe>();

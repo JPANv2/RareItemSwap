@@ -54,7 +54,7 @@ namespace ARareItemSwapJPANs.Parts.Thorium.Bosses
             base.AddRecipes();
             int p2 = ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:FallenDeathBeholder2");
             if(p2 > 0)
-            PartsGlobalNPC.npcParts[p2] = this;
+            PartsGlobalNPC.addPartToNPC(p2,this);
         }
     }
 
@@ -105,7 +105,7 @@ namespace ARareItemSwapJPANs.Parts.Thorium.Bosses
             base.AddRecipes();
             int p2 = ARareItemSwapJPANs.getNPCTypeFromTag("ThoriumMod:Lich");
             if (p2 > 0)
-                PartsGlobalNPC.npcParts[p2] = this;
+                PartsGlobalNPC.addPartToNPC(p2,this);
         }
     }
 
@@ -128,7 +128,7 @@ namespace ARareItemSwapJPANs.Parts.Thorium.Bosses
             };
             foreach(int i in p2)
             {
-                if(i != 0) PartsGlobalNPC.npcParts[i] = this;
+                if(i != 0) PartsGlobalNPC.addPartToNPC(i,this);
             }
         }
     }

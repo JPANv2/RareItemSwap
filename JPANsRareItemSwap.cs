@@ -20,6 +20,7 @@ using Terraria.Enums;
 using Terraria.GameContent.UI;
 using System.Reflection;
 using ARareItemSwapJPANs.Recipes.CalamityModMusic;
+using ARareItemSwapJPANs.Recipes.Calamity;
 
 namespace ARareItemSwapJPANs
 {
@@ -128,6 +129,10 @@ namespace ARareItemSwapJPANs
                 if (m != null)
                     type = m.ItemType(tag.Split(':')[1]);
             }
+            if(type == 0 && tag != "0")
+            {
+                ModLoader.GetMod("ARareItemSwapJPANs").Logger.Warn("Item " + tag + " does not exist.");
+            }
             return type;
         }
 
@@ -156,6 +161,10 @@ namespace ARareItemSwapJPANs
             {
                 PartsGlobalNPC.modpacks.Add(new ThoriumModPartRepository());
             }
+            if (ModLoader.GetMod("CalamityMod") != null)
+            {
+                PartsGlobalNPC.modpacks.Add(new CalamityModPartRepository()); 
+            }
             if (ModLoader.GetMod("CalamityModMusic") != null)
             {
                 PartsGlobalNPC.modpacks.Add(new CalamityModMusicPartRepository()); ;
@@ -178,6 +187,173 @@ namespace ARareItemSwapJPANs
                 makeNPCTables();
             }
         }
+
+        
+        public override object Call(params object[] args)
+        {
+            if (args.Length == 0 || !(args[0] is string) || (((args[0]) as string) == null))
+            {
+                Logger.Info("Mod call was Empty. This will display, in log, what functions are currently available. All function calls are case-insensitive, but arguments are not.");
+                Logger.Info("Player arguments accept the Player object or the Player.whoAmI (position in the Main.player array)");
+                Logger.Info("Item arguments take Item objects, ModItem object, the int Type of that item or the Item Tag of the item)");
+                Logger.Info("Int values accept int or its string representation");
+
+                Logger.Info("Functions available");
+                Logger.Info(" - GetPartList() ");
+                Logger.Info("Returns a list of ItemTags of the parts that exist.");
+                Logger.Info(" - GetMaxPurchasesAvailable (string... parts) ");
+                Logger.Info("Returns a list of items with the stack as the purchase of one of them for all parts whose tags match the given strings, regardless of amount required.");
+               /* Logger.Info(" - GetPurchasesWithParts (Item... parts) ");
+                Logger.Info("Returns a list of items that can be purchased with the ItemParts you give, with stack being the amount you are willing to spend. Do note this item has to be an Terraria.Item, with the type of the part and stack of what you are willing to spend.");
+                Logger.Info(" - PurchasesWithPlayerParts (Player, Item requested,Item... parts) ");
+                Logger.Info("Obtains one copy of the requested item by spending from the requested parts. Returns the item asked for or null if there isn't enough parts.");
+                Logger.Info(" - PurchasesWithTheseParts (Player, Item requested,Item... parts) ");
+                Logger.Info("Obtains one copy of the requested item by subtracting from the given parts items. Returns the item asked for or null if there isn't enough parts.");
+                Logger.Info(" - HowManyParts (Player, Item part) ");
+                Logger.Info("Returns how many of the requested part does Player have.");
+                Logger.Info(" - AddPart (Player, Item part, int amount) ");
+                Logger.Info("Adds the given amount of part to given Player.");*/
+                return null;
+            }
+
+            string function = args[0] as string;
+
+            if (function.ToLower().Equals("getpartlist"))
+            {
+                List<string> parts = new List<string>();
+                parts.AddRange(ARareItemSwapJPANs.tokenList);
+                return parts;
+            }
+            if (function.ToLower().Equals("GetMaxPurchasesAvailable".ToLower()))
+            {
+                if(args.Length == 1)
+                {
+                    Logger.Error("Error in ModCall GetMaxPurchasesAvailable Invalid parameter number (string...)");
+                    return null;
+                }
+                List<string> parts = getListOfStringFromObjects(args, 1);
+                if(parts.Count == 0)
+                {
+                    Logger.Error("Error in ModCall GetMaxPurchasesAvailable Invalid parameter number (string...)");
+                    return null;
+                }
+                List<Item> targets = new List<Item>();
+                foreach(PartRecipe pr in PartRecipes.allRecipes)
+                {
+                    bool allParts = true;
+                    foreach(Item itm in pr.parts)
+                    {
+                        allParts = allParts && parts.Contains(ItemToTag(itm));
+                    }
+                    if (allParts)
+                    {
+                        targets.Add(pr.result.Clone());
+                    }
+                }
+                return targets;
+            }
+            if (function.ToLower().Equals("GetMaxPurchasesAvailable".ToLower()))
+            {
+                if (args.Length == 1)
+                {
+                    Logger.Error("Error in ModCall GetMaxPurchasesAvailable Invalid parameter number (string...)");
+                    return null;
+                }
+                List<string> parts = getListOfStringFromObjects(args, 1);
+                if (parts.Count == 0)
+                {
+                    Logger.Error("Error in ModCall GetMaxPurchasesAvailable Invalid parameter number (string...)");
+                    return null;
+                }
+                List<Item> targets = new List<Item>();
+                foreach (PartRecipe pr in PartRecipes.allRecipes)
+                {
+                    bool allParts = true;
+                    foreach (Item itm in pr.parts)
+                    {
+                        allParts = allParts && parts.Contains(ItemToTag(itm));
+                    }
+                    if (allParts)
+                    {
+                        targets.Add(pr.result.Clone());
+                    }
+                }
+                return targets;
+            }
+            Logger.Error("Error in ModCall: function \"" + function + "\" does not exist.");
+            return null;
+        }
+
+        private List<string> getListOfStringFromObjects(object[] args, int v)
+        {
+            List<string> ans = new List<string>();
+            for (int i = v; i < args.Length; i++)
+            {
+                if (args[i] is List<string>)
+                {
+                    ans.AddRange((args[i]) as List<string>);
+                    continue;
+                }
+                else if (args[i] is string[])
+                {
+                    ans.AddRange((args[i]) as string[]);
+                    continue;
+                }
+                else if (args[i] is string)
+                {
+                    ans.Add((args[i]) as string);
+                    continue;
+                }
+                else
+                {
+
+                }
+            }
+            return ans;
+        }
+
+        private int? getIntFromObject(object o)
+        {
+            if (o == null)
+                return null;
+            if (o as int? != null)
+                return o as int?;
+            if (o as string != null)
+            {
+                int res;
+                if (Int32.TryParse(o as string, out res))
+                    return res;
+            }
+            return null;
+        }
+
+        private int? getItemTypeFromObject(object o)
+        {
+            if (o == null)
+                return null;
+            if (o is string)
+                return getItemTypeFromTag(o as string);
+            else if (o is Item)
+                return (o as Item).type;
+            else if (o is ModItem)
+                return (o as ModItem).item.type;
+            else if (o is int)
+                return (int)o;
+            return null;
+        }
+
+        private Player getPlayerFromObject(object o)
+        {
+            if (o == null)
+                return null;
+            if (o is int && ((int)o < 256))
+                return Main.player[(int)o];
+            if (o is Player)
+                return o as Player;
+            return null;
+        }
+    
+
 
         public static Item getItemFromTag(string tag, bool noMatCheck = false)
         {

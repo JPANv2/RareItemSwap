@@ -126,6 +126,17 @@ namespace ARareItemSwapJPANs
             return false;
         }
 
+        public bool maxPart(Item itm)
+        {
+            string tag = ARareItemSwapJPANs.ItemToTag(itm);
+            if (ARareItemSwapJPANs.tokenList.Contains(tag))
+            {
+                parts[tag] = Int64.MaxValue;
+                return true;
+            }
+            return false;
+        }
+
         public long getPartAmount(string partTag)
         {
             if (ARareItemSwapJPANs.tokenList.Contains(partTag))

@@ -18,7 +18,7 @@ namespace ARareItemSwapJPANs.Parts
         {
             base.AddRecipes();
             if(bossID != 0)
-                PartsGlobalNPC.npcParts[bossID] = this;
+                PartsGlobalNPC.addPartToNPC(bossID,this);
         }
     }
 }

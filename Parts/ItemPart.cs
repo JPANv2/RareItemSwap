@@ -29,6 +29,15 @@ namespace ARareItemSwapJPANs.Parts
         {
             int oldStack = item.stack;
             if(player.GetModPlayer<PartsPlayer>().addPart(this.item)){
+                Mod rmod = ModLoader.GetMod("ResearchFrom14");
+                if (rmod != null && ModContent.GetInstance<Configs.Config>().researchCompatInfPart)
+                {
+                    object o = rmod.Call("IsResearched", player, this.item);
+                    if (o != null && o is int && (o as int?).Value == 0)
+                    {
+                        player.GetModPlayer<PartsPlayer>().parts[ARareItemSwapJPANs.ItemToTag(this.item)] = long.MaxValue;
+                    }
+                }
                 Main.PlaySound(SoundID.Grab, player.position);
                 ItemText.NewText(item, oldStack);
                 return false;
@@ -58,6 +67,11 @@ namespace ARareItemSwapJPANs.Parts
         public override void AddRecipes()
         {
             ARareItemSwapJPANs.tokenList.Add(ARareItemSwapJPANs.ItemToTag(item));
+            Mod rmod = ModLoader.GetMod("ResearchFrom14");
+            if (rmod == null)
+                return;
+            rmod.Call("SetDefaultMaxResearch", item.type, 100);
+            rmod.Call("SetDefaultCategories", item.type, "Parts");
         }
 
         // Token: 0x060031BB RID: 12731 RVA: 0x0024C174 File Offset: 0x0024A374

@@ -71,18 +71,19 @@ namespace ARareItemSwapJPANs.Recipes.Thorium
         public const string WeaponMasterKeyword = "WeaponMaster";
         #endregion
 
-        public override List<int> getBiomePartsDrops(NPC npc, Player p)
+        public override List<int> getBiomePartsDrops(NPC npc, Player p, List<int> parts)
         {
             if (mod != null) {
                 ModPlayer pl = p.GetModPlayer(mod, "ThoriumPlayer");
                 FieldInfo zone = pl.GetType().GetField("ZoneAqua", BindingFlags.Public | BindingFlags.Instance);
                 if(zone != null && (bool)zone.GetValue(pl) == true)
                 {
-                    List<int> parts = new List<int>() { ModContent.ItemType<AquaticDepthsPart>() };
-                    return parts;
+                    parts.Clear();
+                    parts.Add(ModContent.ItemType<AquaticDepthsPart>());
+                    return new List<int>();
                 }
             }
-            return base.getBiomePartsDrops(npc, p);
+            return base.getBiomePartsDrops(npc, p, parts);
         }
 
         public override void AddRecipes()

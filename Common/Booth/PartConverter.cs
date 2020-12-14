@@ -13,7 +13,7 @@ namespace ARareItemSwapJPANs.Common.Booth
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            DisplayName.SetDefault("Part Converter");
+            DisplayName.SetDefault("Part Phone Converter");
             Tooltip.SetDefault("Use to open the Part Exchange screen.\nEquipping this will turn all items you pick up that can be converted into parts into their equivalent Parts.\nIf more than one recipe is available, it will select the one which require the least amount of the picked item, and randomly beteen the remainder after that.");
         }
 

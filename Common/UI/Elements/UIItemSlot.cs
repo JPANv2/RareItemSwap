@@ -295,7 +295,21 @@ namespace ARareItemSwapJPANs.Common.UI.Elements
             {
                 Main.hoverItemName += "IRREVERSIBLE!";
             }
+            if(ModLoader.GetMod("ResearchFrom14") != null)
+            {
+                Mod rmod = ModLoader.GetMod("ResearchFrom14");
+                int? toResearch = (rmod.Call("isresearched", p.player, item)) as int?;
+                if(toResearch != null)
+                {
+                    if (toResearch < 0)
+                        Main.hoverItemName += "\nUnresearchable!";
+                    else if (toResearch == 0)
+                        Main.hoverItemName += "\nResearched!";
+                    else
+                        Main.hoverItemName += "\nResearch " + toResearch + " more to unlock.";
+                } 
             }
+        }
 
         public override int CompareTo(object obj)
         {
