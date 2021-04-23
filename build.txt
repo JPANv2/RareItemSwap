@@ -1,5 +1,5 @@
 author = JPAN
-version = 1.5
+version = 2.0
 displayName = Rare Item Swap
 hideCode = false
 hideResources = false

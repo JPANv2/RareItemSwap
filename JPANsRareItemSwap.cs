@@ -21,6 +21,7 @@ using Terraria.GameContent.UI;
 using System.Reflection;
 using ARareItemSwapJPANs.Recipes.CalamityModMusic;
 using ARareItemSwapJPANs.Recipes.Calamity;
+using ARareItemSwapJPANs.Commands;
 
 namespace ARareItemSwapJPANs
 {
@@ -36,9 +37,14 @@ namespace ARareItemSwapJPANs
 
         public static bool TEST_MODE = false;
 
+        public static PublicModPartRepository publicRepository = new PublicModPartRepository();
+
+        private static log4net.ILog logger;
+
+        public static List<ModCallCommand> commands = new List<ModCallCommand>();
 		public ARareItemSwapJPANs()
 		{
-
+            
         }
 
         public override void Load()
@@ -50,6 +56,25 @@ namespace ARareItemSwapJPANs
                 ui = new PartExchangeUI();
                 ui.Activate();
                 purchaseUI.SetState(ui);
+            }
+        }
+
+        private void initCommands()
+        {
+            logger = Logger;
+            if (commands.Count == 0)
+            {
+                commands.Add(new GetPartListModCall());
+                commands.Add(new GetMaxPurchasesAvailableModCall());
+                commands.Add(new AddNewPartModCall());
+                commands.Add(new AddPartToDropAtModCall());
+                commands.Add(new AddPartToDropFromNPCModCall());
+                commands.Add(new AddBasicShopRecipeModCall());
+                commands.Add(new AddPartRecipeModCall());
+                commands.Add(new AddPartToPlayerModCall());
+                commands.Add(new RemovePartFromPlayerModCall());
+                commands.Add(new DebugDumpModCall());
+
             }
         }
 
@@ -151,8 +176,9 @@ namespace ARareItemSwapJPANs
         public override void AddRecipes()
         {
             PartsGlobalNPC.modpacks.Add(new VanillaModPartRepository());
+            PartsGlobalNPC.modpacks.Add(publicRepository);
 
-            if(ModLoader.GetMod("ModLoader") != null) //Should always be the case, as tMod is needed to run this
+            if (ModLoader.GetMod("ModLoader") != null) //Should always be the case, as tMod is needed to run this
             {
                 PartsGlobalNPC.modpacks.Add(new ModLoaderPartRepository());
             }
@@ -170,7 +196,6 @@ namespace ARareItemSwapJPANs
                 PartsGlobalNPC.modpacks.Add(new CalamityModMusicPartRepository()); ;
             }
             
-
             foreach (ModPartRepository mpr in PartsGlobalNPC.modpacks)
             {
                 mpr.AddRecipes();
@@ -188,97 +213,45 @@ namespace ARareItemSwapJPANs
             }
         }
 
+
         
         public override object Call(params object[] args)
         {
+            initCommands();
             if (args.Length == 0 || !(args[0] is string) || (((args[0]) as string) == null))
             {
                 Logger.Info("Mod call was Empty. This will display, in log, what functions are currently available. All function calls are case-insensitive, but arguments are not.");
-                Logger.Info("Player arguments accept the Player object or the Player.whoAmI (position in the Main.player array)");
-                Logger.Info("Item arguments take Item objects, ModItem object, the int Type of that item or the Item Tag of the item)");
-                Logger.Info("Int values accept int or its string representation");
+                Logger.Info("Player arguments accept the Player object or the Player.whoAmI (position in the Main.player array;");
+                Logger.Info("Item arguments take Item objects, ModItem object, the int Type of that item or the Item Tag of the item;");
+                Logger.Info("NPC arguments take NPC objects, ModNPC object, the int Type of that npc or the NPC Tag of the npc;");
+                Logger.Info("Int values accept int or its string representation;");
+                Logger.Info("Func<T> assumes the correct passed one in the argument. null is accepted in most cases");
 
-                Logger.Info("Functions available");
-                Logger.Info(" - GetPartList() ");
-                Logger.Info("Returns a list of ItemTags of the parts that exist.");
-                Logger.Info(" - GetMaxPurchasesAvailable (string... parts) ");
-                Logger.Info("Returns a list of items with the stack as the purchase of one of them for all parts whose tags match the given strings, regardless of amount required.");
-               /* Logger.Info(" - GetPurchasesWithParts (Item... parts) ");
+                Logger.Info("Functions available:");
+                foreach (ModCallCommand mcc in commands)
+                {
+                    Logger.Info(mcc.Help());
+                }
+               /* 
+                * NOT IMPLEMENTED (didn't see the need to...)
+                * 
+                * Logger.Info(" - GetPurchasesWithParts (Item... parts) ");
                 Logger.Info("Returns a list of items that can be purchased with the ItemParts you give, with stack being the amount you are willing to spend. Do note this item has to be an Terraria.Item, with the type of the part and stack of what you are willing to spend.");
                 Logger.Info(" - PurchasesWithPlayerParts (Player, Item requested,Item... parts) ");
                 Logger.Info("Obtains one copy of the requested item by spending from the requested parts. Returns the item asked for or null if there isn't enough parts.");
                 Logger.Info(" - PurchasesWithTheseParts (Player, Item requested,Item... parts) ");
-                Logger.Info("Obtains one copy of the requested item by subtracting from the given parts items. Returns the item asked for or null if there isn't enough parts.");
-                Logger.Info(" - HowManyParts (Player, Item part) ");
-                Logger.Info("Returns how many of the requested part does Player have.");
-                Logger.Info(" - AddPart (Player, Item part, int amount) ");
-                Logger.Info("Adds the given amount of part to given Player.");*/
+                Logger.Info("Obtains one copy of the requested item by subtracting from the given parts items. Returns the item asked for or null if there isn't enough parts.");*/
                 return null;
             }
 
             string function = args[0] as string;
 
-            if (function.ToLower().Equals("getpartlist"))
+            foreach(ModCallCommand mcc in commands)
             {
-                List<string> parts = new List<string>();
-                parts.AddRange(ARareItemSwapJPANs.tokenList);
-                return parts;
-            }
-            if (function.ToLower().Equals("GetMaxPurchasesAvailable".ToLower()))
-            {
-                if(args.Length == 1)
+                if (mcc.IsThisCommand(function))
                 {
-                    Logger.Error("Error in ModCall GetMaxPurchasesAvailable Invalid parameter number (string...)");
-                    return null;
+                    return mcc.Run(args);
                 }
-                List<string> parts = getListOfStringFromObjects(args, 1);
-                if(parts.Count == 0)
-                {
-                    Logger.Error("Error in ModCall GetMaxPurchasesAvailable Invalid parameter number (string...)");
-                    return null;
-                }
-                List<Item> targets = new List<Item>();
-                foreach(PartRecipe pr in PartRecipes.allRecipes)
-                {
-                    bool allParts = true;
-                    foreach(Item itm in pr.parts)
-                    {
-                        allParts = allParts && parts.Contains(ItemToTag(itm));
-                    }
-                    if (allParts)
-                    {
-                        targets.Add(pr.result.Clone());
-                    }
-                }
-                return targets;
-            }
-            if (function.ToLower().Equals("GetMaxPurchasesAvailable".ToLower()))
-            {
-                if (args.Length == 1)
-                {
-                    Logger.Error("Error in ModCall GetMaxPurchasesAvailable Invalid parameter number (string...)");
-                    return null;
-                }
-                List<string> parts = getListOfStringFromObjects(args, 1);
-                if (parts.Count == 0)
-                {
-                    Logger.Error("Error in ModCall GetMaxPurchasesAvailable Invalid parameter number (string...)");
-                    return null;
-                }
-                List<Item> targets = new List<Item>();
-                foreach (PartRecipe pr in PartRecipes.allRecipes)
-                {
-                    bool allParts = true;
-                    foreach (Item itm in pr.parts)
-                    {
-                        allParts = allParts && parts.Contains(ItemToTag(itm));
-                    }
-                    if (allParts)
-                    {
-                        targets.Add(pr.result.Clone());
-                    }
-                }
-                return targets;
             }
             Logger.Error("Error in ModCall: function \"" + function + "\" does not exist.");
             return null;
@@ -354,6 +327,10 @@ namespace ARareItemSwapJPANs
         }
     
 
+        public static void LogError(string command, string info)
+        {
+            logger.Error("Error in Mod Call \"" + command + "\": " + info);
+        }
 
         public static Item getItemFromTag(string tag, bool noMatCheck = false)
         {
@@ -379,6 +356,15 @@ namespace ARareItemSwapJPANs
             Item itm = new Item();
             itm.SetDefaults(id, true);
             return ItemToTag(itm);
+        }
+
+        public static NPC getNPCFromTag(string tag)
+        {
+            NPC ret = new NPC();
+            int type = getNPCTypeFromTag(tag);
+            if (type != 0)
+                ret.SetDefaults(type);
+            return ret;
         }
 
         public override void HandlePacket(BinaryReader reader, int whoAmI)
@@ -440,8 +426,8 @@ namespace ARareItemSwapJPANs
             }
             return false;
         }
-
-        private void makeNPCTables()
+        #region debug_lists
+        public static void makeNPCTables()
         {
             string filename = "NPCs.txt";
             string filename2 = "NPCs Full Info.txt";
@@ -477,13 +463,13 @@ namespace ARareItemSwapJPANs
                 }
                 catch (Exception e) { }
             }
-            Logger.Info("Done; Parsing " + NPCLoader.NPCCount + " npcs");
+            logger.Info("Done; Parsing " + NPCLoader.NPCCount + " npcs");
 
             f.Close();
             fAll.Close();
         }
 
-        private void makeItemTables()
+        public static void makeItemTables()
         {
             string filename = "Items.txt";
             string filename2 = "Items Full Info.txt";
@@ -497,13 +483,13 @@ namespace ARareItemSwapJPANs
 
             bool[] itemsCrafted = new bool[ItemLoader.ItemCount];
 
-            Logger.Info("Parsing " + Main.recipe.Length + " recipes");
+            logger.Info("Parsing " + Main.recipe.Length + " recipes");
             foreach (Recipe r in Main.recipe)
             {
                 if (r.createItem != null && r.createItem.type > 0)
                     itemsCrafted[r.createItem.type] = true;
             }
-            Logger.Info("Done; Parsing " + ItemLoader.ItemCount + " items");
+            logger.Info("Done; Parsing " + ItemLoader.ItemCount + " items");
 
             foreach (PartRecipe pr in PartRecipes.allRecipes)
             {
@@ -526,7 +512,7 @@ namespace ARareItemSwapJPANs
                     }
                 }
             }
-            Logger.Info("Done; Parsing " + allItems.Count + " uncraftable items");
+            logger.Info("Done; Parsing " + allItems.Count + " uncraftable items");
             string modName = "Terraria";
             string newTag = "";
 
@@ -561,14 +547,14 @@ namespace ARareItemSwapJPANs
             fAll.Close();
         }
 
-        private string printItemTag(Item itm)
+        private static string printItemTag(Item itm)
         {
             if (itm.modItem == null)
                 return "" + itm.type;
             return itm.modItem.mod.Name + ":" + itm.modItem.Name;
         }
 
-        private string printItemInfo(Item itm)
+        private static string printItemInfo(Item itm)
         {
             string ans = printItemTag(itm) + "\t";
             ans += "Name: " + itm.Name + "\t";
@@ -576,14 +562,14 @@ namespace ARareItemSwapJPANs
             return ans;
         }
 
-        private string printNPCTag(NPC itm)
+        private static string printNPCTag(NPC itm)
         {
             if (itm.modNPC == null)
                 return "" + itm.type;
             return itm.modNPC.mod.Name + ":" + itm.modNPC.Name;
         }
 
-        private string printNPCInfo(NPC itm)
+        private static string printNPCInfo(NPC itm)
         {
             string ans = printNPCTag(itm) + "\t";
             ans += "Name: " + itm.TypeName + "\t";
@@ -591,7 +577,7 @@ namespace ARareItemSwapJPANs
             return ans;
         }
 
-        private string placeCategory(Item test)
+        private static string placeCategory(Item test)
         {
             if (test.maxStack == 1)
             {
@@ -767,6 +753,8 @@ namespace ARareItemSwapJPANs
             }
             return "N/A";
         }
+
+        #endregion
         private static bool isCustomCurrency(Item test)
         {
             if (test.type == ItemID.DefenderMedal)

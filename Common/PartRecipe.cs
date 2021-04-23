@@ -327,6 +327,22 @@ namespace ARareItemSwapJPANs.Common
             return recipesByResult.ContainsKey(ARareItemSwapJPANs.ItemToTag(itm));
         }
 
+        public static void addAllRecipes(params PartRecipe[] recipes)
+        {
+            foreach(PartRecipe rec in recipes)
+            {
+                addRecipe(rec);
+            }
+        }
+
+        public static void addAllRecipes(List<PartRecipe> recipes)
+        {
+            foreach (PartRecipe rec in recipes)
+            {
+                addRecipe(rec);
+            }
+        }
+
         public static void addRecipe(PartRecipe recipe)
         {
             bool added = false;

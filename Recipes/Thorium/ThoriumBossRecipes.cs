@@ -1724,6 +1724,34 @@ namespace ARareItemSwapJPANs.Recipes.Thorium
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
             working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
             working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Thorium")); recipes.Add(working);
+           
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheDestroyerPart>(), 1, ARareItemSwapJPANs.getItemTypeFromTag("ThoriumMod:LifeCell"), 1);
+            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Thorium")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheDestroyerPart>(), 1, ARareItemSwapJPANs.getItemTypeFromTag("ThoriumMod:StrangePlating"), 4);
+            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Thorium")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 1, ARareItemSwapJPANs.getItemTypeFromTag("ThoriumMod:LifeCell"), 1);
+            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Thorium")); recipes.Add(working);
+
+            working = PartRecipe.SimplePartRecipe(ModContent.ItemType<TheTwinsPart>(), 1, ARareItemSwapJPANs.getItemTypeFromTag("ThoriumMod:StrangePlating"), 4);
+            workingCategories = makeMaterialCategories(enemyDropsMaterialKeyword); working.addCategoryAndSubcategories(workingCategories);
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, skeletronPrimeKeyword));
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, twinsKeyword));
+            working.addCategoryAndSubcategories(makeByBossCategories(workingCategories, destroyerKeyword));
+            working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Thorium")); recipes.Add(working);
 
             foreach (PartRecipe pr in recipes)
             {

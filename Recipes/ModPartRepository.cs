@@ -477,12 +477,12 @@ namespace ARareItemSwapJPANs.Recipes
             return replies;
         }
 
-        public static List<PartRecipe> buildCommonShopRecipe(string tag, List<string> workingCategories, string shopKey, Func<bool> available = null)
+        public static List<PartRecipe> buildCommonShopRecipe(string tag, List<string> workingCategories, string shopKey, Func<bool> available = null, string modName = "Terraria")
         {
             return buildCommonShopRecipe(ARareItemSwapJPANs.getItemTypeFromTag(tag), workingCategories, shopKey, available);
         }
 
-        public static List<PartRecipe> buildCommonShopRecipe(int ItemId, List<string> workingCategories, string shopKey, Func<bool> available = null)
+        public static List<PartRecipe> buildCommonShopRecipe(int ItemId, List<string> workingCategories, string shopKey, Func<bool> available = null, string modName = "Terraria")
         {
             List<PartRecipe> recipes = new List<PartRecipe>();
             Item itm = new Item();
@@ -532,7 +532,7 @@ namespace ARareItemSwapJPANs.Recipes
                     working.setAvailableFunction(available);
                 working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByShopCategories(workingCategories, shopKey));
-                working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+                working.addCategoryAndSubcategories(makeByModCategories(workingCategories, modName)); recipes.Add(working);
             }
             else
             {
@@ -541,7 +541,7 @@ namespace ARareItemSwapJPANs.Recipes
                     working.setAvailableFunction(available);
                 working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByShopCategories(workingCategories, shopKey));
-                working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+                working.addCategoryAndSubcategories(makeByModCategories(workingCategories, modName)); recipes.Add(working);
             }
             if (stack != 0)
             {
@@ -550,7 +550,7 @@ namespace ARareItemSwapJPANs.Recipes
                     working.setAvailableFunction(available);
                 working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByShopCategories(workingCategories, shopKey));
-                working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+                working.addCategoryAndSubcategories(makeByModCategories(workingCategories, modName)); recipes.Add(working);
             }
             if (majorStack != 0)
             {
@@ -559,7 +559,7 @@ namespace ARareItemSwapJPANs.Recipes
                     working.setAvailableFunction(available);
                 working.addCategoryAndSubcategories(workingCategories);
                 working.addCategoryAndSubcategories(makeByShopCategories(workingCategories, shopKey));
-                working.addCategoryAndSubcategories(makeByModCategories(workingCategories, "Terraria")); recipes.Add(working);
+                working.addCategoryAndSubcategories(makeByModCategories(workingCategories, modName)); recipes.Add(working);
             }
             return recipes;
         }
@@ -622,6 +622,20 @@ namespace ARareItemSwapJPANs.Recipes
                 working.setAvailableFunction(available);
             working.addCategoryAndSubcategories(categories);
             working.addCategoryAndSubcategories(makeByEventCategories(categories, biome));
+            working.addCategoryAndSubcategories(makeByModCategories(categories, mod));
+            return working;
+        }
+
+        public static PartRecipe makePartRecipe(String mod, Item toAdd, int itemAmount, Item[] parts, int[] amounts, List<string> categories, Func<bool>available = null)
+        {
+            PartRecipe working = PartRecipe.SimplePartRecipe(parts[0].type, amounts[0], toAdd.type, itemAmount);
+            for(int i = 1; i< parts.Length; i++)
+            {
+                working.addPart(parts[i].type, amounts[i]);
+            }
+            if (available != null)
+                working.setAvailableFunction(available);
+            working.addCategoryAndSubcategories(categories);
             working.addCategoryAndSubcategories(makeByModCategories(categories, mod));
             return working;
         }

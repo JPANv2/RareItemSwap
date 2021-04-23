@@ -19,6 +19,12 @@ namespace ARareItemSwapJPANs.Parts
             base.AddRecipes();
             if(bossID != 0)
                 PartsGlobalNPC.addPartToNPC(bossID,this);
+            Mod rmod = ModLoader.GetMod("ResearchFrom14");
+            if (rmod == null)
+                return;
+            rmod.Call("SetDefaultMaxResearch", item.type, 500);
+            rmod.Call("SetDefaultCategories", item.type, "Parts");
+            rmod.Call("SetDefaultCategories", item.type, "Parts/Boss Parts");
         }
     }
 }

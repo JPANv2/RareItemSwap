@@ -722,6 +722,7 @@ namespace ARareItemSwapJPANs.Recipes.Calamity
             working = makeSimpleBossPartRecipe(modKeyword, bossName, modClassKeyword + ":" + "CryoBar", 5, partType, 1, makeMaterialCategories(enemyDropsMaterialKeyword));
             recipes.Add(working);
             working = makeSimpleBossPartRecipe(modKeyword, bossName, modClassKeyword + ":" + "EssenceofEleum", 5, partType, 1, makeMaterialCategories(enemyDropsMaterialKeyword));
+            working.irreversible = true;
             recipes.Add(working);
 
             workingCategories = makeAccessoryCategories(defenseKeyword);
@@ -835,6 +836,7 @@ namespace ARareItemSwapJPANs.Recipes.Calamity
             recipes.Add(working);
             
             working = makeSimpleBossPartRecipe(modKeyword, bossName, modClassKeyword + ":" + "EssenceofChaos", 2, partType, 1, makeMaterialCategories(enemyDropsMaterialKeyword));
+            working.irreversible = true;
             recipes.Add(working);
 
             working = makeSimpleBossPartRecipe(modKeyword, bossName, modClassKeyword + ":" + "Abaddon", 1, partType, 20, makeAccessoryCategories(defenseKeyword));
@@ -907,6 +909,7 @@ namespace ARareItemSwapJPANs.Recipes.Calamity
             working = makeSimpleBossPartRecipe(modKeyword, bossName, modClassKeyword + ":" + "CalamityDust", 1, partType, 3, makeMaterialCategories(enemyDropsMaterialKeyword));
             recipes.Add(working);
             working = makeSimpleBossPartRecipe(modKeyword, bossName, modClassKeyword + ":" + "EssenceofChaos", 1, partType, 1, makeMaterialCategories(enemyDropsMaterialKeyword));
+            working.irreversible = true;
             recipes.Add(working);
             working = makeSimpleBossPartRecipe(modKeyword, bossName, modClassKeyword + ":" + "BlightedLens", 2, partType, 1, makeMaterialCategories(enemyDropsMaterialKeyword));
             recipes.Add(working);
