@@ -206,6 +206,20 @@ namespace ARareItemSwapJPANs.Common.UI.Elements
                             item.stack = item.maxStack;
                         }
                     }
+                    else
+                    {
+                        {
+                            Item temp = realItem;
+                            realItem = Main.mouseItem;
+                            Main.player[Main.myPlayer].GetModPlayer<PartsPlayer>().destroyingItem = Main.mouseItem;
+                            Main.mouseItem = temp;
+                            if (!ARareItemSwapJPANs.tokenList.Contains(ARareItemSwapJPANs.ItemToTag(realItem)))
+                            {
+                                ((ARareItemSwapJPANs)ModLoader.GetMod("ARareItemSwapJPANs")).ExchangeUISelectRecipe(PartRecipes.recipesByResult[ARareItemSwapJPANs.ItemToTag(realItem)][0]);
+                            }
+
+                        }
+                    }
 
                 }
             }
@@ -301,8 +315,12 @@ namespace ARareItemSwapJPANs.Common.UI.Elements
                 int? toResearch = (rmod.Call("isresearched", p.player, item)) as int?;
                 if(toResearch != null)
                 {
-                    if (toResearch < 0)
+                    if (toResearch == -1)
                         Main.hoverItemName += "\nUnresearchable!";
+                    else if (toResearch == -2)
+                        Main.hoverItemName += "\nResearched by parts!";
+                    else if (toResearch == -3)
+                        Main.hoverItemName += "\nResearched by crafting!";
                     else if (toResearch == 0)
                         Main.hoverItemName += "\nResearched!";
                     else

@@ -59,6 +59,15 @@ namespace ARareItemSwapJPANs
             }
         }
 
+        public override void Unload()
+        {
+            tokenList.Clear();
+            publicRepository = new PublicModPartRepository();
+            PartRecipes.Clear();
+            PartsGlobalNPC.Clear();
+            base.Unload();
+        }
+
         private void initCommands()
         {
             logger = Logger;
@@ -175,6 +184,7 @@ namespace ARareItemSwapJPANs
 
         public override void AddRecipes()
         {
+
             PartsGlobalNPC.modpacks.Add(new VanillaModPartRepository());
             PartsGlobalNPC.modpacks.Add(publicRepository);
 

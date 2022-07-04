@@ -322,6 +322,13 @@ namespace ARareItemSwapJPANs.Common
         public static Dictionary<string, List<PartRecipe>> recipesByResult = new Dictionary<string, List<PartRecipe>>();
         public static Dictionary<string, List<PartRecipe>> recipesByCategory = new Dictionary<string, List<PartRecipe>>();
         public static List<PartRecipe> allRecipes = new List<PartRecipe>();
+
+        public static void Clear()
+        {
+            recipesByResult.Clear();
+            recipesByCategory.Clear();
+            allRecipes.Clear();
+        }
         public static bool ContainsAsResult(Item itm)
         {
             return recipesByResult.ContainsKey(ARareItemSwapJPANs.ItemToTag(itm));

@@ -141,7 +141,7 @@ namespace ARareItemSwapJPANs.Recipes.Calamity
             working = makeSimpleEventPartRecipe(modKeyword, solarEclipseKeyword, modClassKeyword + ":" + "SolarVeil", 1, ModContent.ItemType<SolarEclipsePart>(), 1, makeMaterialCategories(enemyDropsMaterialKeyword));
             recipes.Add(working);
             working = makeSimpleEventPartRecipe(modKeyword, solarEclipseKeyword, modClassKeyword + ":" + "DarksunFragment", 1, ModContent.ItemType<SolarEclipsePart>(), 1, makeMaterialCategories(enemyDropsMaterialKeyword));
-            working.addPart(ModContent.ItemType<PostYharonPart>(), 1);
+            working.addPart(ModContent.ItemType<PostDevourerOfGodsPart>(), 1);
             recipes.Add(working);
             working = makeSimpleEventPartRecipe(modKeyword, pumpkinMoonKeyword, modClassKeyword + ":" + "NightmareFuel", 1, ModContent.ItemType<PumpkinMoonPart>(), 1, makeMaterialCategories(enemyDropsMaterialKeyword));
             working.addPart(ModContent.ItemType<PostDevourerOfGodsPart>(), 1);

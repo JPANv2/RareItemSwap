@@ -1,0 +1,185 @@
+Hardmode Part
+ThoriumMod:Lullaby - 25
+
+Post-Moonlord Part
+ThoriumMod:CometFragment - 1
+
+Rare Enemy part
+ThoriumMod:DangerShard x5 - 1
+ThoriumMod:AnglerBulb - 1 + 5 AquaticDepts Part
+
+Fishing part
+ThoriumMod:RivetingTadpole - 50 + 10 junglePart
+ThoriumMod:AquaticDepthsCrate - 5 + 1 AquaticDepths part
+
+Forest part
+ThoriumMod:Flute - 20
+
+Underground Part
+ThoriumMod:MixTape - 25
+ThoriumMod:MoltenScale - 25
+ThoriumMod:SmoothCoal x5 - 1
+ 
+
+Snow Part
+ThoriumMod:IceFairyStaff - 10 + 10 Rain Part + 5 HM parts
+ThoriumMod:LostMail - 100 snow Parts + 10 Rain Parts + 5 HM parts
+
+Jungle underground part
+ThoriumMod:Petal x5- 1
+ThoriumMod:ForestOcarina - 25
+
+Corruption part
+ThoriumMod:FanLetter2 - 25
+
+Crimson part
+ThoriumMod:FanLetter - 25
+
+Sky part
+ThoriumMod:AvianCartilage x5 - 1 
+
+Hell part
+ThoriumMod:Nocturne - 25 + DungeonPart*1
+
+Marble Part
+ThoriumMod:BronzeFragments x5 - 1
+
+Granite Part
+
+Dungeon Part
+ThoriumMod:Jelly x2 - 1
+ThoriumMod:aDarksteelAlloy - 1
+
+Aquatic depths Part
+ThoriumMod:Fishbone - 250 + PostPlantera*200
+ThoriumMod:AquaticDepthsBiomeKey - 250 + HM part*200
+ThoriumMod:AquaticDepthsBiomeChest - 3 + PostPlantera*1
+ThoriumMod:DepthChest - 3 + PostPlantera*1
+ThoriumMod:SteelDrum - 20
+ThoriumMod:AnglerBowl - 20
+ThoriumMod:MagicConch - 20
+ThoriumMod:RainStone - 20
+ThoriumMod:SeaTurtlesBulwark - 20
+ThoriumMod:SpinyShell - 20
+ThoriumMod:BubbleMagnet - 5
+ThoriumMod:CartlidgedCatcher - 20
+ThoriumMod:Leviathan - 20 + 10HM part
+ThoriumMod:NanoClamCane - 10
+ThoriumMod:StarfishSlicer x25 - 1
+ThoriumMod:VampireGland - 10 + 5HM part
+
+ThoriumMod:Pearl x2 - 1
+ThoriumMod:CrystalWave - 5 + 1HM part
+ThoriumMod:WaterChestnut x5 - 1 
+ThoriumMod:MarineKelp x15 - 1
+ThoriumMod:MarineKelpSeeds x15 - 1
+ThoriumMod:Aquaite x10 - 1
+ThoriumMod:DepthScale - 1 + 1 HM part
+ThoriumMod:AbyssalChitin x2 - 1 + 1 HM part
+ThoriumMod:BrackMud x75 - 1
+ThoriumMod:MarineRock x100 - 1
+ThoriumMod:MarineRockMoss x100 - 1
+
+
+Events
+Blood Moon
+ThoriumMod:Bagpipe - 30 + HardmodePart x2
+
+Goblin Army
+ThoriumMod:YewWood x20 - 1 
+
+Pirate Invasion
+ThoriumMod:Concertina - 3
+
+Solar Eclipse
+ThoriumMod:SunflareGuitar - 25
+
+Bosses
+Wall Of Flesh
+ThoriumMod:BardEmblem - 20
+ThoriumMod:NinjaEmblem - 20
+
+Plantera
+ThoriumMod:BloomWeave x6 - 1
+ThoriumMod:VuvuzelaBlue - 5
+ThoriumMod:VuvuzelaGreen - 5
+ThoriumMod:VuvuzelaRed - 5
+ThoriumMod:VuvuzelaYellow - 5
+
+Duke Fishron
+ThoriumMod:DukesRegalCarnyx - 20
+
+Dark Mage
+ThoriumMod:DarkMageBag - 100 - Treasure Bag
+ThoriumMod:ArcaneAnelace - 20 - Throwing Weapon
+ThoriumMod:DarkMageStaff - 20 - Healer staff
+ThoriumMod:DarkTome - 20 - Magic book
+ThoriumMod:TabooWand - 20 - summon Staff
+
+Ogre
+ThoriumMod:OgreBag - 100 - Treasure Bag
+ThoriumMod:GrogBlueprint - 20 - misc
+ThoriumMod:OgreSandal - 20 - accessory boots
+ThoriumMod:OgreSnotGun - 20 - ranged gun
+ThoriumMod:OgreSnot x30 - 1 - ammo other, irreversible
+
+Betsy
+ThoriumMod:BetsysBellow - 20 
+
+Ancient Cultist
+ThoriumMod:CultistBag - 200 - Treasure Bag
+ThoriumMod:AncientLight - 100 - Expert mode Magic Other
+ThoriumMod:AncientFrost - 20 - Magic Staff
+ThoriumMod:AncientFlame - 20 - Magic Staff
+ThoriumMod:AncientSpark - 20 - Magic Staff
+ThoriumMod:AstralFang - 20 - Melee Sword
+ThoriumMod:CelestialNova - 20 - Healer (radiant) Staff
+
+Moon Lord
+ThoriumMod:SonicAmplifier - 20
+
+Goblin Summoner
+ThoriumMod:SummonerWarhorn - 20
+
+Flying dutchman
+ThoriumMod:Tuba - 20
+
+Santa NK-1
+ThoriumMod:JingleBells - 20
+
+Martian Saucer
+ThoriumMod:Triangle - 20
+ThoriumMod:Turntable - 20
+
+
+Abysson
+ThoriumMod:AbyssalShadow2 - 1 - Boss summon, irreversible
+ThoriumMod:AbyssalShell - 100 - Expert Accessory (Defence)
+ThoriumMod:AbyssionBag - 200 - Treasure Bag
+ThoriumMod:AbyssionMask - 50 - Mask
+ThoriumMod:AbyssionThrophy - 50 - Throphy
+ThoriumMod:MantisPunch - 20 - Melee Flail
+ThoriumMod:OldGodsGrasp - 20 - Magic staff
+ThoriumMod:RlyehLostRod - 20 . fishing rod
+ThoriumMod:SirensAllure - 20 - Bard String
+ThoriumMod:TheIncubator - 20 - summon staff
+ThoriumMod:TrenchSplitter - 20 - ranged gun
+ThoriumMod:WhisperingHood - 7 - armor head
+ThoriumMod:WhisperingLeggings - 7 - armor legs
+ThoriumMod:WhisperingTabard - 7- armor body
+
+Borean Strider
+ThoriumMod:BoreanBag - 200 - Treasure Bag
+ThoriumMod:BoreanThrophy - 50 - Throphy
+ThoriumMod:TundraLordCrown - 50 - Mask
+ThoriumMod:CryoFang - 20 - Throwing javelin
+ThoriumMod:FreezeRay- 20 - Ranged gun
+ThoriumMod:FrostFang - 20 - Magic Staff
+ThoriumMod:GlacialSting - 20 - Ranged Bow
+ThoriumMod:GlacierFang - 20 - Melee Sword
+ThoriumMod:IceBoundStriderHide - 100 - Expert Accessory (Offence)
+ThoriumMod:StriderTear - 1 - Boss Summon, Irreversible
+
+
+Note: Ragnarok (primodial) parts drop from all 3(4) stages, so costs are more expensive, bag costs 400
+Developers

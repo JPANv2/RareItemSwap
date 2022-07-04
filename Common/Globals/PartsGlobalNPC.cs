@@ -18,6 +18,12 @@ namespace ARareItemSwapJPANs.Common.Globals
     {
         public static Dictionary<int, List<Item>> npcParts = new Dictionary<int, List<Item>>();
         public static List<ModPartRepository> modpacks = new List<ModPartRepository>();
+
+        public static void Clear()
+        {
+            npcParts.Clear();
+            modpacks.Clear();
+        }
         public override void NPCLoot(Terraria.NPC npc)
         {
             base.NPCLoot(npc);

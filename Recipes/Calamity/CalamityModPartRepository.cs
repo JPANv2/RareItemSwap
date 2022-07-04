@@ -149,13 +149,9 @@ namespace ARareItemSwapJPANs.Recipes.Calamity
                 {
                     listSoFar.Add(ModContent.ItemType<PostDevourerOfGodsPart>());
                 }
-                Type w = mod.GetType().Assembly.GetType("CalamityMod.World.CalamityWorld");
-                if (w != null)
+                if ((bool)mod.Call(new object[] { "GetBossDowned", "yharon" }))
                 {
-                    if ((bool)(w.GetField("buffedEclipse", BindingFlags.Static | BindingFlags.Public).GetValue(null)))
-                    {
-                        listSoFar.Add(ModContent.ItemType<PostYharonPart>());
-                    }
+                    listSoFar.Add(ModContent.ItemType<PostYharonPart>());
                 }
                 return new List<int>();
             }
